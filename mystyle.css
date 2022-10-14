@@ -65,3 +65,7 @@ div = {
 .dropdown a:hover {
   background-color: white;
 }
+
+p {
+  font-family: sans-serif;
+}
