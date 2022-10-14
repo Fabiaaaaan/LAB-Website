@@ -42,10 +42,6 @@ div = {
   z-index: 1;
 }
 
-h {
-  color: red;
-}
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -68,8 +64,4 @@ h {
 
 .dropdown a:hover {
   background-color: white;
-}
-
-p {
-  font-family: sans-serif;
 }
