@@ -18,36 +18,36 @@ div = {
 }
 
 .navbar a, .dropbtn {
+  background-color: #002277;
+  border: none;
+  color: white;
   font-family: consolas;
   font-size: 20px;
   padding: 32px 16px;
   text-align: left;
-  color: white;
   text-decoration: none;
-  border: none;
-  background-color: #002277;
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
   background-color: #0055bb;
-  min-width: 150px;
   box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+  display: none;
+  min-width: 150px;
+  position: absolute;
   z-index: 1;
 }
 
 .dropdown-content a {
+  background-color: #0055bb;
   color: white;
+  display: block;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
-  background-color: #0055bb;
 }
 
 .dropdown:hover .dropbtn {
