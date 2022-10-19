@@ -5,6 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
+	<script>
+		function show() {
+			document.getElementById("unsichtbar").style.display = "block";
+			document.getElementById("a1").style.color = "#FF6961";
+			document.getElementById("a2").style.color = "#FDFD96";
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -30,5 +37,23 @@
 		</div>
 	</nav>
 	<h1>MAC-Adressen</h1>
+	<p>MAC steht für Media Access Protocol.</p>
+	<p>Die MAC-Adresse adressiert Netzwerkschnittstellen eines Hosts. Das sind die physikalischen Anschlüsse eines Hosts an ein Netzwerk.</p>
+	<p>Hat ein Host mehrere Netzwerkschnittstellen, kann er auch mehrere MAC-Adressen haben.</p>
+	<p>Durch die MAC-Adresse ist ein Host in einem Netzwerk jederzeit eindeutig wiedererkennbar ist. Dies ist bei IP-Adressen nicht möglich, da diese zeitlich befristet sind.</p>
+	<hr>
+	<h2>Aufbau</h2>
+	<p>Eine MAC-Adresse wird als zwölfstellige Hexadezimalzahl dargestellt.</p>
+	<p>Sie besteht aus 48 Bits. Jeder Byte wird durch einen Doppelpunkt oder durch einen Bindestrich getrennt.</p>
+	<div class="bsp" onclick="show()">
+		<p style="color: white; margin-top: 0;">Beispiel:</p>
+		<p class="adresse"><span id="a1">14-85-7F</span>-<span id="a2">B7-54-4E</span></p>
+		<div id="unsichtbar">
+			<div class="rot">Herstellkennung</div>
+			<div class="gelb">Gerätkennung</div>
+		</div>
+	</div>
+	<p>Die erste Hälfte steht für den Hersteller. Diese Herstellkennung wird vom <a href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers</a> vergeben.</p>
+	<p>Die zweite Hälfte wird vom Hersteller vergeben.</p>
 </body>
 </html>

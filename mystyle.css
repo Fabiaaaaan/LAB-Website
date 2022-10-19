@@ -2,11 +2,14 @@ body {
   margin: 0;
 }
 
-div = {
+div {
   margin: 0;
   padding: 0;
 }
 
+a {
+  color: #0055bb;
+}
 
 /* Styles für Navigationleiste */
 .navbar {
@@ -66,11 +69,70 @@ div = {
 
 /* Styles für einzelne Seiten */
 h1 {
-  color: black;
-  font-family: consolas;
   font-size: 56px;
+  margin-top: 112px;
+}
+
+h1, h2{
+  font-family: consolas;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top: 112px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.bsp {
+  background-color: #0055bb;
+  border-radius: 25px;
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+  margin-bottom: 36px;
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 36px;
+  padding-top: 36px;
+  width: 30%;
+}
+
+.adresse {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+}
+
+hr {
+  margin-bottom: 36px;
+  margin-top: 36px;
+}
+
+p {
+  font-family: tahoma;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Beispiele Adressen */
+#unsichtbar {
+  display: none;
+}
+
+.rot {
+  color: #FF6961;
+  display: inline-block;
+  font-family: consolas;
+  margin-left: 10%;
+  text-align: center;
+  width: 40%;
+}
+
+.gelb {
+  color: #FDFD96;
+  display: inline-block;
+  font-family: consolas;
+  text-align: center;
+  width: 40%;
 }
