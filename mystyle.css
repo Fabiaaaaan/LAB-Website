@@ -1,28 +1,4 @@
-body {
-  margin: 0;
-}
-
-div {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: #0055bb;
-}
-
-span {
-  font-family: consolas;
-  text-align: center;
-}
-
-img {
-  display: inline-block;
-  width: 40%;
-}
-
-
-/* Styles für Navigationleiste */
+/* Styles für Navigationsleiste */
 .navbar {
   background-color: #002277;
   position: fixed;
@@ -95,6 +71,45 @@ h2 {
   font-size: 40px;
 }
 
+hr {
+  margin-bottom: 36px;
+  margin-top: 36px;
+}
+
+p {
+  font-family: tahoma;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0055bb;
+}
+
+span {
+  font-family: consolas;
+  text-align: center;
+}
+
+img {
+  display: inline-block;
+  width: 40%;
+}
+
+/* Tabellen */
+
+/* Beispiele Adressen */
 .bsp {
   background-color: #0055bb;
   border-radius: 25px;
@@ -115,22 +130,6 @@ h2 {
   max-width: 100%;
 }
 
-hr {
-  margin-bottom: 36px;
-  margin-top: 36px;
-}
-
-p {
-  font-family: tahoma;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
-  text-align: center;
-}
-
-/* Tabellen */
-
-/* Beispiele Adressen */
 #unsichtbar {
   display: none;
 }

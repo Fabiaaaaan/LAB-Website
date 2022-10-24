@@ -5,6 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
+	<script>
+		function show() {
+			document.getElementById("unsichtbar").style.display = "block";
+			document.getElementById("a1").style.color = "#FF6961";
+			document.getElementById("a2").style.color = "#FDFD96";
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -23,7 +30,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">Urheber- und Datenschutz</button>
-			<div style="min-width:297px;" class="dropdown-content">
+			<div style="min-width: 297px;" class="dropdown-content">
 				<a href="urheberschutz.html">Urheberschutz</a>
 				<a href="datenschutz.html">Datenschutz</a>
 			</div>
@@ -33,5 +40,14 @@
 	<p>Da es zwei verschiedene Versionen des <a href="ip-protokoll.html">Internet Protocols (IP)</a> gibt, gibt es zwei verschiedene Arten von IP-Adressen: <b>IPv4- und IPv6-Adressen</b>.</p>
 	<hr>
 	<h2>IPv4-Adressen</h2>
+	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bits, haben. Somit können in jedem Zahlenblock Zahlen von 0 bis 255 dargestellt werden. Die Zahlenblöcke werden durch einen Punkt voneinander getrennt.</p>
+	<div class="bsp" onclick="show()">
+		<p style="color: white; margin-top: 0;">Beispiel:</p>
+		<p class="adresse"><span id="a1">192.168.100</span>.<span id="a2">12</span></p>
+		<div id="unsichtbar">
+			<div class="rot">Netzwerkanteil</div>
+			<div class="gelb">Hostanteil</div>
+		</div>
+	</div>
 </body>
 </html>
