@@ -6,10 +6,22 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function show() {
-			document.getElementById("unsichtbar").style.display = "block";
-			document.getElementById("a1").style.color = "#FF6961";
-			document.getElementById("a2").style.color = "#FDFD96";
+		function ipShow() {
+			document.getElementById("ipUnsichtbar").style.display = "block";
+			document.getElementById("bsp1").style.maxWidth = "700px";
+		}
+
+		var sm = 0;
+		function smShow() {
+			if (sm == 0) {
+				document.getElementById("nm").innerHTML = "<span id='nt'>11111111.11111111.111111</span><span id='ht'>00.00000000</span>";
+				document.getElementById("bsp2").style.maxWidth = "700px";
+				sm++;
+			} else {
+				document.getElementById("smUnsichtbar").style.display = "block";
+				document.getElementById("nt").style.color = "#FF6961";
+				document.getElementById("ht").style.color = "#FDFD96";
+			}
 		}
 	</script>
 </head>
@@ -37,16 +49,30 @@
 		</div>
 	</nav>
 	<h1>IPv4 vs. IPv6</h1>
-	<p>Da es zwei verschiedene Versionen des <a href="ip-protokoll.html">Internet Protocols (IP)</a> gibt, gibt es zwei verschiedene Arten von IP-Adressen: <b>IPv4- und IPv6-Adressen</b>.</p>
+	<p>Da es zwei verschiedene Versionen des <a href="ip.html">Internet Protocols</a> (IP) gibt, gibt es zwei verschiedene Arten von IP-Adressen: <b>IPv4- und IPv6-Adressen</b>.</p>
 	<hr>
 	<h2>IPv4-Adressen</h2>
-	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bits, haben. Somit können in jedem Zahlenblock Zahlen von 0 bis 255 dargestellt werden. Die Zahlenblöcke werden durch einen Punkt voneinander getrennt.</p>
-	<div class="bsp" onclick="show()">
+	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bits, haben. Somit entspricht jeder Zahlenblock einer Zahl von 0 bis 255. Die Zahlenblöcke werden als Dezimalzahlen dargestellt und durch einen Punkt voneinander getrennt.</p>
+	<div class="bsp" id="bsp1" onclick="ipShow()">
 		<p style="color: white; margin-top: 0;">Beispiel:</p>
-		<p class="adresse"><span id="a1">192.168.100</span>.<span id="a2">12</span></p>
-		<div id="unsichtbar">
-			<div class="rot">Netzwerkanteil</div>
-			<div class="gelb">Hostanteil</div>
+		<p class="adresse">192.168.100.120</p>
+		<div id="ipUnsichtbar" style="display: none;">
+			<p style="color: white;">=</p>
+			<p class="adresse">11000000.10101000.01100100.01111000</p>
+		</div>
+	</div>
+	<h2>Die Subnetzmaske</h2>
+	<p>Zu jeder IPv4-Adresse gehört eine <b>Subnetzmaske</b>. Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
+	<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse. Werden jedoch alle vier Zahlenblöcke in das von Computern lesbare Binärsystem umgewandelt, besteht sie immer aus zwei aufeinanderfolgenden Folgen von 1en und 0en. An dem Punkt, wo die binäre Subnetzmaske von 1en auf 0en umspringt, beginnt der Hostanteil der IP-Adresse.</p>
+	<div class="bsp" id="bsp2" onclick="smShow()">
+		<p style="color: white">Beispiel:</p>
+		<p style="color: white">Subnetzmaske:</p>
+		<p class="adresse" id="nm">255.255.252.0</p>
+		<div id="smUnsichtbar" style="display: none;">
+			<p style="color: white;">zugehörige IP-Adresse:</p>
+			<p class="adresse"><span class="rot">11000000.10101000.011001</span><span class="gelb">00.01111000</span></p>
+			<p class="rot nt">Netzwerkteil</p>
+			<p class="gelb">Hostteil</p>
 		</div>
 	</div>
 </body>

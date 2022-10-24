@@ -60,7 +60,7 @@ h1 {
   margin-top: 112px;
 }
 
-h1, h2{
+h1, h2, h3{
   font-family: consolas;
   margin-left: auto;
   margin-right: auto;
@@ -98,7 +98,7 @@ a {
 }
 
 span {
-  font-family: consolas;
+  font-family: tahoma;
   text-align: center;
 }
 
@@ -120,7 +120,7 @@ img {
   margin-right: auto;
   padding-bottom: 36px;
   padding-top: 36px;
-  width: 30%;
+  max-width: 500px;
 }
 
 .adresse {
@@ -137,18 +137,38 @@ img {
 .rot {
   color: #FF6961;
   display: inline-block;
-  font-family: consolas;
-  margin-left: 10%;
+  font-family: tahoma;
   text-align: center;
-  width: 40%;
 }
 
 .gelb {
   color: #FDFD96;
   display: inline-block;
-  font-family: consolas;
+  font-family: tahoma;
   text-align: center;
-  width: 40%;
+}
+
+/* IP-Adressen */
+.bilder {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.l {
+  margin-left: 5%;
+  margin-right: 10%;
+}
+
+/* IPv4 vs IPv6 */
+.nt {
+  margin-left: 5%;
+  margin-right: 70%;
+  width: 10%;
+}
+
+.ht {
+  width: 10%;
 }
 
 /* DNS */
@@ -162,14 +182,12 @@ img {
   width: 70%;
 }
 
-/* IP-Adressen */
-.bilder {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+/* MAC-Adressen */
+.herstellkennung {
+  margin-left: 10%;
+  width: 40%;
 }
 
-.l {
-  margin-left: 5%;
-  margin-right: 10%;
+.gerätkennung {
+  width: 40%;
 }
