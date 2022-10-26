@@ -191,3 +191,9 @@ img {
 .gerätkennung {
   width: 40%;
 }
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  margin-left: 300px;
+}
