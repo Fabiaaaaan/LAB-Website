@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
 		function show() {
-			document.getElementById("unsichtbar").style.display = "block";
+			document.getElementsByClassName("unsichtbar")[0].style.display = "block";
 			document.getElementById("a1").style.color = "#FF6961";
 			document.getElementById("a2").style.color = "#FDFD96";
 		}
@@ -46,15 +46,14 @@
 	<p>Eine MAC-Adresse wird als zwölfstellige Hexadezimalzahl dargestellt.</p>
 	<p>Sie besteht aus 48 Bits, die in sechs Zahlenblöcken zu je einem Byte, also acht Bits, dargestellt werden. Jeder Zahlenblock wird durch einen Doppelpunkt oder durch einen Bindestrich getrennt.</p>
 	<div class="bsp" onclick="show()">
-		<p style="color: white; margin-top: 0;">Beispiel:</p>
+		<p class="weiss mt0">Beispiel:</p>
 		<p class="adresse"><span id="a1">14-85-7F</span>-<span id="a2">B7-54-4E</span></p>
-		<div id="unsichtbar">
-			<div class="rot herstellkennung">Herstellkennung</div>
-			<div class="gelb gerätkennung">Gerätkennung</div>
+		<div class="unsichtbar">
+			<div class="rot herstellkennung mb0">Herstellkennung</div>
+			<div class="gelb gerätkennung mb0">Gerätkennung</div>
 		</div>
 	</div>
 	<p>Die erste Hälfte steht für den Hersteller. Diese Herstellkennung wird vom <a href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers</a> (IEEE) vergeben.</p>
 	<p>Die zweite Hälfte wird vom Hersteller vergeben.</p>
-	<hr>
 </body>
 </html>

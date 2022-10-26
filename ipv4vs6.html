@@ -6,22 +6,28 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function ipShow() {
-			document.getElementById("ipUnsichtbar").style.display = "block";
+		function ip4Show() {
+			document.getElementById("ip4").style.display = "block";
 			document.getElementById("bsp1").style.maxWidth = "700px";
 		}
 
 		var sm = 0;
 		function smShow() {
 			if (sm == 0) {
-				document.getElementById("nm").innerHTML = "<span id='nt'>11111111.11111111.111111</span><span id='ht'>00.00000000</span>";
+				document.getElementById("nm").innerHTML = "<span id='nt'>11111111.11111111.111111</span><span id='ht4'>00.00000000</span>";
 				document.getElementById("bsp2").style.maxWidth = "700px";
 				sm++;
 			} else {
-				document.getElementById("smUnsichtbar").style.display = "block";
+				document.getElementById("sm").style.display = "block";
 				document.getElementById("nt").style.color = "#FF6961";
-				document.getElementById("ht").style.color = "#FDFD96";
+				document.getElementById("ht4").style.color = "#FDFD96";
 			}
+		}
+
+		function ip6Show() {
+			document.getElementById("ip6").style.display = "block";
+			document.getElementById("präfix").style.color = "#FF6961";
+			document.getElementById("ht6").style.color = "#FDFD96";
 		}
 	</script>
 </head>
@@ -52,28 +58,44 @@
 	<p>Da es zwei verschiedene Versionen des <a href="ip.html">Internet Protocols</a> (IP) gibt, gibt es zwei verschiedene Arten von IP-Adressen: <b>IPv4- und IPv6-Adressen</b>.</p>
 	<hr>
 	<h2>IPv4-Adressen</h2>
-	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bits, haben. Somit entspricht jeder Zahlenblock einer Zahl von 0 bis 255. Die Zahlenblöcke werden als Dezimalzahlen dargestellt und durch einen Punkt voneinander getrennt.</p>
-	<div class="bsp" id="bsp1" onclick="ipShow()">
-		<p style="color: white; margin-top: 0;">Beispiel:</p>
+	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bit, haben. Somit entspricht jeder Zahlenblock einer Zahl von 0 bis 255. Die Zahlenblöcke werden als Dezimalzahlen dargestellt und durch einen Punkt voneinander getrennt.</p>
+	<div class="bsp" id="bsp1" onclick="ip4Show()">
+		<p class="weiss mt0">Beispiel:</p>
 		<p class="adresse">192.168.100.120</p>
-		<div id="ipUnsichtbar" style="display: none;">
-			<p style="color: white;">=</p>
+		<div class="unsichtbar" id="ip4">
+			<p class="weiss">=</p>
 			<p class="adresse">11000000.10101000.01100100.01111000</p>
 		</div>
 	</div>
 	<h2>Die Subnetzmaske</h2>
 	<p>Zu jeder IPv4-Adresse gehört eine <b>Subnetzmaske</b>. Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
-	<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse. Werden jedoch alle vier Zahlenblöcke in das von Computern lesbare Binärsystem umgewandelt, besteht sie immer aus zwei aufeinanderfolgenden Folgen von 1en und 0en. An dem Punkt, wo die binäre Subnetzmaske von 1en auf 0en umspringt, beginnt der Hostanteil der IP-Adresse.</p>
+	<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse. Werden jedoch alle vier Zahlenblöcke in das von Computern lesbare Binärsystem umgewandelt, besteht sie immer aus zwei aufeinanderfolgenden Folgen von 1en und 0en. An der Stelle, wo die binäre Subnetzmaske von 1en auf 0en umspringt, beginnt der Hostanteil der IP-Adresse.</p>
 	<div class="bsp" id="bsp2" onclick="smShow()">
-		<p style="color: white">Beispiel:</p>
-		<p style="color: white"><b>Subnetzmaske:</b></p>
+		<p class="weiss mt0">Beispiel:</p>
+		<p class="weiss"><b>Subnetzmaske:</b></p>
 		<p class="adresse" id="nm">255.255.252.0</p>
-		<div id="smUnsichtbar" style="display: none;">
-			<p style="color: white;"><b>zugehörige IP-Adresse:</b></p>
+		<div class="unsichtbar" id="sm">
+			<p class="weiss"><b>zugehörige IP-Adresse:</b></p>
 			<p class="adresse"><span class="rot">11000000.10101000.011001</span><span class="gelb">00.01111000</span></p>
-			<p class="rot nt">Netzwerkteil</p>
-			<p class="gelb">Hostteil</p>
+			<p class="rot nt mb0">Netzwerkteil</p>
+			<p class="gelb ht4 mb0">Hostteil</p>
 		</div>
 	</div>
+	<hr>
+	<h2>IPv6-Adressen</h2>
+	<p>IPv6-Adressen haben eine Länge von 128 Bit. Sie wird in acht Teile von je 16 Bit unterteilt. Innerhalb dieser Gruppierung werden je vier Bit als Hexadezimalzahl dargestellt, sodass eine vierstellige Hexadezimalzahl entsteht. Die acht vierstelligen Hexadezimalzahlen werden durch Doppelpunkte voneinander getrennt.</p>
+	<p>Eine Subnetzmaske wie bei IPv4-Adressen gibt es bei IPv6-Adressen nicht. Um trotzdem eine Unterteilung in Netzwerk- und Hostteil vornehmen zu können, wird der IPv6-Adresse eine Präfixlänge mit einem Schrägstrich ("/") angehängt. Die Präfixlänge gibt an, wie viele Bit der Präfix (der Netzwerkteil) lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
+	<div class="bsp" style="max-width: 800px" onclick="ip6Show()">
+		<p class="weiss mt0">Beispiel:</p>
+		<p class="adresse"><span id="präfix">2a02:8108:973f:e78c</span>:<span id="ht6">7549:1759:ae97:e061</span>/64</p>
+		<div class="unsichtbar" id="ip6">
+			<p class="rot präfix mb0">Präfix</p>
+			<p class="gelb mb0">Hostteil</p>
+		</div>
+	</div>
+	<hr>
+	<h2>Vor- und Nachteile</h2>
+	<p>Da IPv4-Adressen nur 4 Byte, also 32 Bit, lang können in einem Netzwerk theoretisch höchstens 256⁴ bzw. <b>2³²</b> = 4.294.967.296 IP-Adressen vergeben werden, wobei es in der Praxis sogar noch weniger sind. Mit der wachsenden Digitalisierung reicht diese Anzahl an Adressen nicht mehr aus. IPv6 hingegen bietet die Möglichkeit für <b>2¹²⁸</b>, das sind mehr als 340 Sextilionen, verschiedene Adressen. Hier muss muss man sich keine Sorgen machen, dass einem die Adressen ausgehen.</p>
+	<p>Dennoch sind IPv4-Adressen immernoch wesentlich weiter verbreitet als ihr Nachfolgeversion. IPv4-Hosts und IPv6-Hosts können nicht direkt miteinander kommunizieren. Um die Kommunikation dennoch zu ermöglichen wird viel technisches Fachwissen erfordert.</p>
 </body>
 </html>
