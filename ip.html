@@ -5,6 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
+	<script>
+		function inhaltShow() {
+			document.getElementById("paket").style.display = "none";
+			document.getElementById("inhalt").style.display = "inline-block"
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -29,5 +35,71 @@
 			</div>
 		</div>
 	</nav>
+	<h1>Das Internet Protocol (IP)</h1>
+	<p>Wir kennen nun den Aufbau von den Adressen des Internet Protocols, kurz: IP. Doch was ist eigentlich seine Funktion?</p>
+	<p>Das Internet Protocol ist ein Netzwerkprotokoll, das den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Die Reinfolge der Datenpakete sowie ihre Routen können sich jedoch ändern.</p>
+	<hr>
+	<h2>IP-Datagrame</h2>
+	<p>Das Internet Protocol definiert, wie Daten, die versant werden sollen, strukturiert werden: in <b>IP-Datagramen</b>.</p>
+  <p>IP-Datagrame werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
+	<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png" >
+	<div style="text-align: center;">
+		<table class="unsichtbar datagram-tabelle" id="inhalt">
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+				<th>7</th>
+				<th>8</th>
+				<th>9</th>
+				<th>10</th>
+				<th>11</th>
+				<th>12</th>
+				<th>13</th>
+				<th>14</th>
+				<th>15</th>
+				<th>16</th>
+				<th>17</th>
+				<th>18</th>
+				<th>19</th>
+				<th>20</th>
+				<th>21</th>
+				<th>22</th>
+				<th>23</th>
+				<th>24</th>
+				<th>25</th>
+				<th>26</th>
+				<th>27</th>
+				<th>28</th>
+				<th>29</th>
+				<th>30</th>
+				<th>31</th>
+				<th>32</th>
+			</tr>
+			<tr>
+				<td colspan="4">Version <div class="dropdown-content"><p>Test</p></div></td>
+				<td colspan="4">Headerlänge</td>
+				<td colspan="8">Servicetyp</td>
+				<td colspan="16">Gesamtlänge</td>
+			</tr>
+			<tr>
+				<td colspan="16">Kennung</td>
+				<td colspan="3">Flags</td>
+				<td colspan="13">Fragment-Offset</td>
+			</tr>
+			<tr>
+				<td colspan="8">TTL (Time To Live)</td>
+				<td colspan="8">Protokoll</td>
+				<td colspan="16">Header-Checksumme</td>
+			</tr>
+			<tr><td colspan="32">Quell-IP-Adresse</td></tr>
+			<tr><td colspan="32">Ziel-IP-Adresse</td></tr>
+			<tr><td colspan="32">Optionen</td></tr>
+			<tr><td colspan="32" style="background-color: #80aadd;">Daten</td></tr>
+		</table>
+	</div>
 </body>
 </html>

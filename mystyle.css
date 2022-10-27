@@ -22,9 +22,12 @@
   position: relative;
 }
 
-.dropdown-content {
+.navbar .dropdown-content {
   background-color: #0055bb;
   box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content {
   display: none;
   position: absolute;
   z-index: 1;
@@ -42,7 +45,7 @@
   background-color: #003399;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, td:hover .dropdown-content {
   display: block;
 }
 
@@ -108,7 +111,16 @@ img {
   width: 40%;
 }
 
-/* Tabellen */
+table, tr, td  {
+  border: 2px solid black;
+  border-collapse: collapse;
+  font-family: tahoma;
+}
+
+/* Binärsystem */
+.binaer-tabelle {
+  margin-left: 300px;
+}
 
 /* Beispiele Adressen */
 .bsp {
@@ -189,6 +201,41 @@ img {
   margin-right: 72%;
 }
 
+/* Internet Protocol */
+#paket {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 48px;
+  max-width: 400px;
+}
+
+.datagram-tabelle {
+  border: none;
+  border-collapse: separate;
+  margin-top: 36px;
+}
+
+.datagram-tabelle th {
+  color: #0055bb;
+  opacity: 0.5;
+  text-align: center;
+  width: 24px;
+}
+
+.datagram-tabelle td {
+  background-color: #0055bb;
+  border: none;
+  color: white;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+td:hover .dropdown-content p {
+  background-color: #80aadd;
+  padding: 18px;
+}
 
 /* DNS */
 .searchbar {
@@ -209,10 +256,4 @@ img {
 
 .gerätkennung {
   width: 40%;
-}
-
-table, th, td {
-  border: 2px solid black;
-  border-collapse: collapse;
-  margin-left: 300px;
 }
