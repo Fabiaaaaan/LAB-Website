@@ -116,21 +116,18 @@ table {
 }
 
 table, tr, td  {
-  border: 2px solid black;
   border-collapse: collapse;
   font-family: tahoma;
 }
 
 /* Binärsystem */
-table.binaer-tabelle, .binaer-tabelle th, .binaer-tabelle td {
+.binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
+  font-family: consolas; 
 }
 
 .binaer-tabelle th, .binaer-tabelle td{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px;
 }
 
 /* Beispiele Adressen */
