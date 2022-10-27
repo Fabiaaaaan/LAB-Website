@@ -214,7 +214,7 @@ img {
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
-  margin-left: 160px;
+  margin-left: 25%;
 }
 th, td{
   font-family: consolas;
