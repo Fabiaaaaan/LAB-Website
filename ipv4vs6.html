@@ -60,10 +60,10 @@
 	<h2>IPv4-Adressen</h2>
 	<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bit, haben. Somit entspricht jeder Zahlenblock einer Zahl von 0 bis 255. Die Zahlenblöcke werden als Dezimalzahlen dargestellt und durch einen Punkt voneinander getrennt.</p>
 	<div class="bsp" id="bsp1" onclick="ip4Show()">
-		<p class="weiss mt0">Beispiel:</p>
+		<p class="mt0">Beispiel:</p>
 		<p class="adresse">192.168.100.120</p>
 		<div class="unsichtbar" id="ip4">
-			<p class="weiss">=</p>
+			<p>=</p>
 			<p class="adresse">11000000.10101000.01100100.01111000</p>
 		</div>
 	</div>
@@ -71,11 +71,11 @@
 	<p>Zu jeder IPv4-Adresse gehört eine <b>Subnetzmaske</b>. Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
 	<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse. Werden jedoch alle vier Zahlenblöcke in das von Computern lesbare Binärsystem umgewandelt, besteht sie immer aus zwei aufeinanderfolgenden Folgen von 1en und 0en. An der Stelle, wo die binäre Subnetzmaske von 1en auf 0en umspringt, beginnt der Hostanteil der IP-Adresse.</p>
 	<div class="bsp" id="bsp2" onclick="smShow()">
-		<p class="weiss mt0">Beispiel:</p>
-		<p class="weiss"><b>Subnetzmaske:</b></p>
+		<p class="mt0">Beispiel:</p>
+		<p><b>Subnetzmaske:</b></p>
 		<p class="adresse" id="nm">255.255.252.0</p>
 		<div class="unsichtbar" id="sm">
-			<p class="weiss"><b>zugehörige IP-Adresse:</b></p>
+			<p><b>zugehörige IP-Adresse:</b></p>
 			<p class="adresse"><span class="rot">11000000.10101000.011001</span><span class="gelb">00.01111000</span></p>
 			<p class="rot nt mb0">Netzwerkteil</p>
 			<p class="gelb ht4 mb0">Hostteil</p>
@@ -86,7 +86,7 @@
 	<p>IPv6-Adressen haben eine Länge von 128 Bit. Sie wird in acht Teile von je 16 Bit unterteilt. Innerhalb dieser Gruppierung werden je vier Bit als Hexadezimalzahl dargestellt, sodass eine vierstellige Hexadezimalzahl entsteht. Die acht vierstelligen Hexadezimalzahlen werden durch Doppelpunkte voneinander getrennt.</p>
 	<p>Eine Subnetzmaske wie bei IPv4-Adressen gibt es bei IPv6-Adressen nicht. Um trotzdem eine Unterteilung in Netzwerk- und Hostteil vornehmen zu können, wird der IPv6-Adresse eine Präfixlänge mit einem Schrägstrich ("/") angehängt. Die Präfixlänge gibt an, wie viele Bit der Präfix (der Netzwerkteil) lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
 	<div class="bsp" style="max-width: 800px" onclick="ip6Show()">
-		<p class="weiss mt0">Beispiel:</p>
+		<p class="mt0">Beispiel:</p>
 		<p class="adresse"><span id="präfix">2a02:8108:973f:e78c</span>:<span id="ht6">7549:1759:ae97:e061</span>/64</p>
 		<div class="unsichtbar" id="ip6">
 			<p class="rot präfix mb0">Präfix</p>
