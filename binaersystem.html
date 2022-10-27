@@ -32,7 +32,7 @@
 	<h1>Binärsystem</h1>
 	<p>Wir haben eine IPv.4 Adresse, die 11001011 00000000 01110001 11000011 lautet. Wenn wir uns allerdings in der Befehlszeile unseres Rechners die IP-Adresse anzeigen lassen, ist diese im Dezimalsystem geschrieben . Wir beschäftigen uns nun damit, wie wir von einem System zum anderen kommen</p>
 	<hr>
-	<h2>Dezimalsystem</h2>
+	<h2>Zählen</h2>
 	<p>Um das Binärsystem besser zu verstehen, schauen wir uns erstmal an, wie das Dezimalsystem funktioniert</p>
   <p>Das Dezimalsystem verwendet 10 Ziffern pro Stelle, 0-9. Beim Zählen wird erst die erste Stelle von rechts von 0-9 aufgefüllt. 0, 1, 2, 3 …. 9. Danach springt diese Stelle auf null, und die zweite Stelle wird auf 1 gesetzt: 8, 9, 10. Nun wird die erste Stelle von 0-9 wieder aufgefüllt 10, 11, 12 …. </p>
 	<table class="binaer-tabelle">
@@ -61,6 +61,49 @@
 			<td>19</td>
 	  </tr>
   </table>
+	<pre>
+	</pre>
+	<p>Das Zählen beim <b>Binärsystem</b> funktioniert ähnlich wie beim Dezimalsystem, nur dass nur zwei Ziffern verwendet werden: 0 und 1</p>
+	<pre>
+	</pre>
+	<table style="margin-left: 45%">
+	<tr>
+		<td>0000</td>
+		<td>0001</td>
+	</tr>
+	<tr>
+		<td>0010</td>
+		<td>0011</td>
+	</tr>
+	<tr>
+		<td>0110</td>
+		<td>0111</td>
+	</tr>
+	<tr>
+		<td>1110</td>
+		<td>1111</td>
+	</tr>
+	</table>
 	<hr>
+	<h2>Rechnen</h2>
+	<p>Um den Wert einer bestimmten Dezimalzahl zu berechnen und im Dezimalsystem anzugeben wird die erste Stelle von rechts mit 10<sup>0</sup> multipliziert, die zweite mit 10<sup>1</sup>, die dritte mit 10<sup>2</sup>… um den echten Wert zu erhalten.</p>
+	<div class="bsp" id="bsp2">
+		<p class="weiss mt0">Beispiel:</p>
+		<p class="weiss"><b>Dezimalzahl</b></p>
+		<span class="adresse" id="nm" style="color: #0055bb">00000000000</span><span class="adresse" id="nm" style="color: red">2</span><span class="adresse" id="nm" style="color: yellow">8</span><span class="adresse" id="nm" style="color: pink">9</span><span class="adresse" id="nm" style="color: orange">4</span>
+		<p class="weiss"><b>Wert</b></p>
+		<span class="adresse" id="nm" style="color: #0055bb">0</span><span class="adresse" id="nm" style="color: red">2*10<sup>3</sup></span><span class="adresse" id="nm" style="color: yellow">+8*10<sup>2</sup></span><span class="adresse" id="nm" style="color: pink">+9*10<sup>1</sup></span><span class="adresse" id="nm" style="color: orange">+4*10<sup>0</sup></span>
+	</div>
+	<p>Die Errechnung des Werts einer Binärzahl funktioniert ähnlich, nur verwenden wir hier die Basis 2. Die erste Stelle von rechts wird mit 2<sup>0</sup> multipliziert, die zweite Stelle mit 2<sup>1</sup>, die dritte Stelle mit 2<sup>2</sup>…</p>
+	<div class="bsp" id="bsp2">
+		<p class="weiss mt0">Beispiel:</p>
+		<p class="weiss"><b>Binärzahl</b></p>
+		<span class="adresse" id="nm" style="color: #0055bb">00000000000</span><span class="adresse" id="nm" style="color: red">1</span><span class="adresse" id="nm" style="color: yellow">1</span><span class="adresse" id="nm" style="color: pink">1</span><span class="adresse" id="nm" style="color: orange">1</span>
+		<p class="weiss"><b>Wert</b></p>
+		<span class="adresse" id="nm" style="color: #0055bb">0</span><span class="adresse" id="nm" style="color: red">1*2<sup>3</sup></span><span class="adresse" id="nm" style="color: yellow">+1*2<sup>2</sup></span><span class="adresse" id="nm" style="color: pink">+1*2<sup>1</sup></span><span class="adresse" id="nm" style="color: orange">+1*2<sup>0</sup></span><span class="adresse" id="nm" style="color: white">=15</span><
+	</div>
+	<p>Hinweis: man kann in beiden Systemen unendlich viele Nullen links vor die Zahl schreiben:</p>
+	<p>34=000000000000000034(Dezimalsystem)</p>
+	<p>11011=0000000000000011011(Binärsystem)</p>
 </body>
 </html>
