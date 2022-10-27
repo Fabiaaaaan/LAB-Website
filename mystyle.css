@@ -111,6 +111,10 @@ img {
   width: 40%;
 }
 
+table {
+  display: inline-block;
+}
+
 table, tr, td  {
   border: 2px solid black;
   border-collapse: collapse;
@@ -120,11 +124,9 @@ table, tr, td  {
 /* Binärsystem */
 table.binaer-tabelle, .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
-  border-collapse: collapse;
-  margin-left: 25%;
 }
+
 .binaer-tabelle th, .binaer-tabelle td{
-  font-family: consolas;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
