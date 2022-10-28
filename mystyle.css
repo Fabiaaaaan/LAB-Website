@@ -168,14 +168,14 @@ table, tr, td  {
 }
 
 .rot {
-  color: #FF6961;
+  color: #FF6961 !important;
   display: inline-block;
   font-family: tahoma;
   text-align: center;
 }
 
 .gelb {
-  color: #FDFD96;
+  color: #FDFD96 !important;
   display: inline-block;
   font-family: tahoma;
   text-align: center;
