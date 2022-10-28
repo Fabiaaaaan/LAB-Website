@@ -221,7 +221,6 @@ table, tr, td  {
 .datagram-tabelle {
   border: none;
   border-collapse: separate;
-  margin-top: 36px;
 }
 
 .datagram-tabelle th {
@@ -242,6 +241,9 @@ table, tr, td  {
 
 td:hover .dropdown-content p {
   background-color: #80aadd;
+  box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2);
+  margin-left: 0;
+  margin-top: 18px;
   padding: 18px;
 }
 
