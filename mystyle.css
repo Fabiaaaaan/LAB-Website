@@ -265,3 +265,20 @@ td:hover .dropdown-content p {
 .gerätkennung {
   width: 40%;
 }
+
+.title {
+  font-size: 60px;
+  font-family: consolas;
+  color: white;
+}
+
+.titlelink {
+  color: white;
+  font-size: 30px;
+  font-family: consolas;
+  margin-left: 30%;
+}
+
+.titlelink:hover {
+  color: gray;
+}
