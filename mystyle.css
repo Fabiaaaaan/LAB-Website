@@ -129,6 +129,21 @@ table, tr, td  {
 .binaer-tabelle th, .binaer-tabelle td{
   padding: 10px 20px;
 }
+/* Bit und Byte */
+.bit-tabelle th, .bit-tabelle td {
+  border: 1px solid black;
+  font-family: consolas;
+}
+
+.bit-tabelle th, .bit-tabelle td{
+  padding: 5px 5px;
+}
+
+.zwei-tabelle th, .zwei-tabelle td{
+  border: 1px solid white;
+  font-family: consolas;
+  padding: 1px 0px;
+}
 
 /* Beispiele Adressen */
 .bsp {
