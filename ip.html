@@ -37,12 +37,16 @@
 	</nav>
 	<h1>Das Internet Protocol (IP)</h1>
 	<p>Wir kennen nun den Aufbau von den Adressen des Internet Protocols, kurz: IP. Doch was ist eigentlich seine Funktion?</p>
-	<p>Das Internet Protocol ist ein Netzwerkprotokoll, das den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Die Reinfolge der Datenpakete sowie ihre Routen können sich jedoch ändern.</p>
+	<p>Das Internet Protocol ist ein Netzwerkprotokoll, den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Die Reinfolge der Datenpakete sowie ihre Routen können sich jedoch ändern.</p>
 	<hr>
-	<h2>IP-Datagrame</h2>
-	<p>Das Internet Protocol definiert, wie Daten, die versant werden sollen, strukturiert werden: in <b>IP-Datagramen</b>.</p>
-  <p>IP-Datagrame werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
-	<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png" >
+	<h2>Subnetting und Routing</h2>
+	<hr>
+	<h2>IP-Pakete</h2>
+	<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>
+  <p>IP-Pakete, auch IP-Datagrame genannt, werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
+	<p><b>Fragmentierung:</b> Jede Netzwerkschnittstelle hat eine Maximalgröße in Byte, die ein Paket, das diese passieren möchte, haben kann: die MTU (Maximum Transmission Unit). Auf seinem Weg, kann es passieren, dass ein IP-Paket zu groß ist und somit fragmentiert (zerteilt) werden muss. Die Fragmente werden separat weitergeschickt und am Ziel wieder zusammengesetzt.</p> <!-- Eigentlich werden die Datenpakete meist schon vom TCP aus eben diesem Grund zerlegt, aber werden andere Protokolle, wie das UDP oder das ICMP verwendet, werden größere Segmente versendet und das IP muss die Aufgabe der Segmentierung übernehmen.<!-->
+	<p style="margin-top: 36px"><b>IPv4-Paket:</b></p>
+	<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png">
 	<div style="text-align: center;">
 		<table class="unsichtbar datagram-tabelle" id="inhalt">
 			<tr>
@@ -80,25 +84,25 @@
 				<th>32</th>
 			</tr>
 			<tr>
-				<td colspan="4">Version <div class="dropdown-content"><p>Test</p></div></td>
-				<td colspan="4">Headerlänge</td>
-				<td colspan="8">Servicetyp</td>
-				<td colspan="16">Gesamtlänge</td>
+				<td colspan="4">Version <div class="dropdown-content"><p>gibt an welche Version des Internet Protocols verwendet wird</p></div></td>
+				<td colspan="4">Headerlänge<div class="dropdown-content"><p>gibt Länge vom IP-Header als Vielfaches von 32 an</div></td>
+				<td colspan="8">Servicetyp<div class="dropdown-content"><p>kann für die Priorisierung von IP-Paketen verwendet werden</p></div></td>
+				<td colspan="16">Gesamtlänge<div class="dropdown-content"><p>gibt die Gesamtlänge des IP-Pakets an</div></td>
 			</tr>
 			<tr>
-				<td colspan="16">Kennung</td>
-				<td colspan="3">Flags</td>
-				<td colspan="13">Fragment-Offset</td>
+				<td colspan="16">Kennung<div class="dropdown-content"><p>Ist ein IP-Paket fragmentiert, haben alle Fragmente die gleiche Kennung, die angibt, zu welchem IP-Paket sie gehören.</p></div></td>
+				<td colspan="3">Flags<div class="dropdown-content"><p>Das erste Bit ist immer auf 0 gesetzt.<br>Hat das zweite Bit den Wert 1, so darf das IP-Paket nicht fragmentiert werden.<br>Hat das dritte Bit einen Wert von 1, so folgen weitere Fragmente. Dementsprechend gibt ein Wert von 0 an, dass es sich um das letzte Fragment handelt.</p></div></td>
+				<td colspan="13">Fragment-Offset<div class="dropdown-content"><p>gibt die Position des Fragments im originalen fragmentierten IP-Paket an</div></td>
 			</tr>
 			<tr>
-				<td colspan="8">TTL (Time To Live)</td>
-				<td colspan="8">Protokoll</td>
-				<td colspan="16">Header-Checksumme</td>
+				<td colspan="8">Lebensdauer<div class="dropdown-content"><p>Die Lebensdauer, auch Time To Live (TTL) genannt, gibt an, wie viele Stationen ein IP-Paket durchlaufen kann bis es verworfen wird. Dies dient dazu, die Belastung des Netzwerks durch unzustellbare IP-Pakete zu minimieren. Der vor Versand definierten Lebensdauer wird jedes Mal 1 abgezogen, wenn das Paket einen Router passiert. Bei einem Wert von 0 wird das Paket verworfen und der aktuelle Router sendet eine Fehlermeldung an den Absender zurück.</p></div></td>
+				<td colspan="8">Protokoll<div class="dropdown-content"><p>gibt übergeordnetes Transportprotokoll an</p></div></td>
+				<td colspan="16">Header-Checksumme<div class="dropdown-content"><p>Die Header-Checksumme sichert die Korrektheit des IP-Headers. Sie wird bei jeder Station auf dem Weg des IP-Pakets neu berechnet.</div></td>
 			</tr>
-			<tr><td colspan="32">Quell-IP-Adresse</td></tr>
-			<tr><td colspan="32">Ziel-IP-Adresse</td></tr>
-			<tr><td colspan="32">Optionen</td></tr>
-			<tr><td colspan="32" style="background-color: #80aadd;">Daten</td></tr>
+			<tr><td colspan="32">Quell-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Absenders</p></div></td></tr>
+			<tr><td colspan="32">Ziel-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Empfängers</div></td></tr>
+			<tr><td colspan="32">Optionen<br>...<div class="dropdown-content"><p>enthält optionale Informationen zu Routing-, Debugging-, Sicherheits- und Statistikfunktionen. Diese werden hauptsächlich für Diagnosezwecke verwendet.</p></div></td></tr>
+			<tr><td colspan="32" style="background-color: #80aadd;">Daten<br>...</td></tr>
 		</table>
 	</div>
 </body>

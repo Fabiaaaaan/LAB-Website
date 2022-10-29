@@ -123,7 +123,6 @@ table, tr, td  {
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
-  font-family: consolas;
 }
 
 .binaer-tabelle th, .binaer-tabelle td{
@@ -154,9 +153,9 @@ table, tr, td  {
   margin-top: 36px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 500px;
   padding-bottom: 36px;
   padding-top: 36px;
-  max-width: 500px;
 }
 
 .bsp p {
@@ -183,17 +182,13 @@ table, tr, td  {
 }
 
 .rot {
-  color: #FF6961;
+  color: #FF6961 !important;
   display: inline-block;
-  font-family: tahoma;
-  text-align: center;
 }
 
 .gelb {
-  color: #FDFD96;
+  color: #FDFD96 !important;
   display: inline-block;
-  font-family: tahoma;
-  text-align: center;
 }
 
 /* IP-Adressen */
@@ -236,7 +231,6 @@ table, tr, td  {
 .datagram-tabelle {
   border: none;
   border-collapse: separate;
-  margin-top: 36px;
 }
 
 .datagram-tabelle th {
@@ -257,6 +251,9 @@ table, tr, td  {
 
 td:hover .dropdown-content p {
   background-color: #80aadd;
+  box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2);
+  margin-left: 0;
+  margin-top: 18px;
   padding: 18px;
 }
 
@@ -281,6 +278,7 @@ td:hover .dropdown-content p {
   width: 40%;
 }
 
+/* Index */
 .title {
   font-size: 60px;
   font-family: consolas;
@@ -289,9 +287,10 @@ td:hover .dropdown-content p {
 
 .titlelink {
   color: white;
+  display: block;
   font-size: 30px;
   font-family: consolas;
-  margin-left: 30%;
+  text-align: center;
 }
 
 .titlelink:hover {
