@@ -6,6 +6,10 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
+		function show(element) {
+			document.getElementById(element).style.display = "block";
+		}
+
 		function inhaltShow() {
 			document.getElementById("paket").style.display = "none";
 			document.getElementById("inhalt").style.display = "inline-block"
@@ -37,9 +41,42 @@
 	</nav>
 	<h1>Das Internet Protocol (IP)</h1>
 	<p>Wir kennen nun den Aufbau von den Adressen des Internet Protocols, kurz: IP. Doch was ist eigentlich seine Funktion?</p>
-	<p>Das Internet Protocol ist ein Netzwerkprotokoll, den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Die Reinfolge der Datenpakete sowie ihre Routen können sich jedoch ändern.</p>
+	<p>Das Internet Protocol ist ein Netzwerkprotokoll, den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Dadurch, dass die Datenpakete auf verschiedenen Routen vom Absender zum Empfänger gelangen können, kann es sein, dass die Pakete in einer anderen Reinfolge beim Empfänger ankommen oder einzelne Datenpakete unterwegs verloren gehen. Andere Protokolle sind dafür zuständig, die angekommenen Datenpakete auf Vollständigkeit zu überprüfen und zu ordnen.</p>
 	<hr>
 	<h2>Subnetting und Routing</h2>
+	<p><b>Subnetting:</b></p>
+	<p>Subnetting ist die Unterteilung eines Netzwerks in kleinere Teilentzwerke: Subnetze.</p>
+	<p>Innerhalb eines Subnets haben die IP-Adressen aller Hosts den gleichen Netzwerkteil</p>
+	<p>Sollen IP-Datenpakete versandt werden, werden zuerst die Netzwerkteile der Quell- und die Ziel-IP-Adressen miteinander verglichen. Stimmen diese überein befinden sich Absender und Empfänger im gleichen Subnetz und können direkt miteinander kommunizieren.</p>
+	<br>
+	<p><b>Routing</b></p>
+	<p>Stimmen die Netzwerkteile von Absender und Empfänger nicht überein, befinden sie sich in unterschiedlichen Subnetzen. Das IP-Datenpaket wird nun zuerst an den Default Gateway des Absenders weitergeleitet. Ein Gateway ist eine IP-Adresse eines Routers, die wie eine Haustür zu einem Subnetz funktioniert:</p>
+	<p>Bei jedem Gateway wird überprüft, ob sich der Absender im Netzwerk des Gateways befindet, also ob die IP-Adressen des Gateways und des Empfängers übereinstimmen. Ist dies der Fall, wird es an den Emfänger weitergeleitet. Sonst leitet der Router das Datenpaket an den nächsten Gateway weiter. Das Verfahren wird so lange wiederholt, bis das Netzwerk des Empfängers gefunden wurde oder die TTL abgelaufen ist. Hierbei wird in Routing-Tabellen bestimmt, an welchen Gateway das Datenpaket als nächstes weitergeleitet wird.</p>
+	<hr>
+	<h2>IP-Adressen mit besonderer Bedeutung</h2>
+	<p>Bestimmte IP-Adressbereiche haben eine besondere Funktion. Sie können nur zu diesem Zweck vergeben werden.</p>
+	<ul>
+		<li onclick="show('privat')"><b>Private IP-Adressen</b></li>
+		<div class="unsichtbar" id="privat">
+			<p>Bestimmte Adressbereiche wurden nur in privaten Netzwerken verwendet, das heißt sie werden nicht im Internet geroutet.</p>
+			<p>In einem privaten Netzwerk ist jedem Netzwerkteilnehmer eine private IP-Adresse zugeordnet. Möchte ein Netzwerkteilnehmer beispielsweise eine Website aufrufen, wird die Anfrage erst intern an den Router weitergeleitet. Hier wird die private Quell-IP-Adresse mit Hilfe von Network Address Translation (NAT) zu einer öffentlichen umgewandelt. Der Router hat sich gemerkt von welchem Netzwerkteilnehmer, die Anfrage gesendet wurde und leitet die Antwort an diesen weiter.</p>
+		</div>
+		<li onclick="show('na')"><b>Netzadressen</b></li>
+		<div class="unsichtbar" id="na">
+			<div class="bsp"><p class="adresse">100.200.0.<b>0</b></p></div>
+			<p>Netzadressen sind IP-Adressen die mit einer 0 enden. Sie stehen nicht für einen einzelnen Host sondern für das Subnetz.</p>
+		</div>
+		<li onclick="show('broadcast')"><b>Broadcast-Adressen</b></li>
+		<div class="unsichtbar" id="broadcast">
+			<div class="bsp"><p class="adresse">100.200.0.<b>255</b></p></div>
+			<p>Broadcast-Adressen sind IP-Adressen, die mit einer 255 enden. Über die Broadcast-Adresse können alle Hosts im entsprechenden Subnetz angesprochen werden.</p>
+		</div>
+		<li onclick="show('lh')"><b>local host</b></li>
+		<div class="unsichtbar" id="lh">
+			<div class="bsp"><p class="adresse">127.0.0.1</p></div>
+			<p>IP-Pakete, die an diese Adresse gesendet werden, verlassen ihren Host nicht, sondern werden an andere laufende Prozesse auf diesem Computer weitergeleitet.</p>
+		</div>
+	</ul>
 	<hr>
 	<h2>IP-Pakete</h2>
 	<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>

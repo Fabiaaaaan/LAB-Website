@@ -227,6 +227,13 @@ table, tr, td  {
 }
 
 /* Internet Protocol */
+li {
+  font-family: consolas;
+  font-size: 32px;
+  margin-top: 36px;
+  text-align: center;
+}
+
 #paket {
   display: block;
   margin-left: auto;
