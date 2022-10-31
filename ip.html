@@ -53,31 +53,6 @@
 	<p>Stimmen die Netzwerkteile von Absender und Empfänger nicht überein, befinden sie sich in unterschiedlichen Subnetzen. Das IP-Datenpaket wird nun zuerst an den Default Gateway des Absenders weitergeleitet. Ein Gateway ist eine IP-Adresse eines Routers, die wie eine Haustür zu einem Subnetz funktioniert:</p>
 	<p>Bei jedem Gateway wird überprüft, ob sich der Absender im Netzwerk des Gateways befindet, also ob die IP-Adressen des Gateways und des Empfängers übereinstimmen. Ist dies der Fall, wird es an den Emfänger weitergeleitet. Sonst leitet der Router das Datenpaket an den nächsten Gateway weiter. Das Verfahren wird so lange wiederholt, bis das Netzwerk des Empfängers gefunden wurde oder die TTL abgelaufen ist. Hierbei wird in Routing-Tabellen bestimmt, an welchen Gateway das Datenpaket als nächstes weitergeleitet wird.</p>
 	<hr>
-	<h2>IP-Adressen mit besonderer Bedeutung</h2>
-	<p>Bestimmte IP-Adressbereiche haben eine besondere Funktion. Sie können nur zu diesem Zweck vergeben werden.</p>
-	<ul>
-		<li onclick="show('privat')"><b>Private IP-Adressen</b></li>
-		<div class="unsichtbar" id="privat">
-			<p>Bestimmte Adressbereiche wurden nur in privaten Netzwerken verwendet, das heißt sie werden nicht im Internet geroutet.</p>
-			<p>In einem privaten Netzwerk ist jedem Netzwerkteilnehmer eine private IP-Adresse zugeordnet. Möchte ein Netzwerkteilnehmer beispielsweise eine Website aufrufen, wird die Anfrage erst intern an den Router weitergeleitet. Hier wird die private Quell-IP-Adresse mit Hilfe von Network Address Translation (NAT) zu einer öffentlichen umgewandelt. Der Router hat sich gemerkt von welchem Netzwerkteilnehmer, die Anfrage gesendet wurde und leitet die Antwort an diesen weiter.</p>
-		</div>
-		<li onclick="show('na')"><b>Netzadressen</b></li>
-		<div class="unsichtbar" id="na">
-			<div class="bsp"><p class="adresse">100.200.0.<b>0</b></p></div>
-			<p>Netzadressen sind IP-Adressen die mit einer 0 enden. Sie stehen nicht für einen einzelnen Host sondern für das Subnetz.</p>
-		</div>
-		<li onclick="show('broadcast')"><b>Broadcast-Adressen</b></li>
-		<div class="unsichtbar" id="broadcast">
-			<div class="bsp"><p class="adresse">100.200.0.<b>255</b></p></div>
-			<p>Broadcast-Adressen sind IP-Adressen, die mit einer 255 enden. Über die Broadcast-Adresse können alle Hosts im entsprechenden Subnetz angesprochen werden.</p>
-		</div>
-		<li onclick="show('lh')"><b>local host</b></li>
-		<div class="unsichtbar" id="lh">
-			<div class="bsp"><p class="adresse">127.0.0.1</p></div>
-			<p>IP-Pakete, die an diese Adresse gesendet werden, verlassen ihren Host nicht, sondern werden an andere laufende Prozesse auf diesem Computer weitergeleitet.</p>
-		</div>
-	</ul>
-	<hr>
 	<h2>IP-Pakete</h2>
 	<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>
   <p>IP-Pakete, auch IP-Datagrame genannt, werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
@@ -142,5 +117,41 @@
 			<tr><td colspan="32" style="background-color: #80aadd;">Daten<br>...</td></tr>
 		</table>
 	</div>
+	<hr>
+	<h2>IP-Adressen mit besonderer Bedeutung</h2>
+	<p>Bestimmte IP-Adressbereiche haben eine besondere Funktion. Sie können nur zu diesem Zweck vergeben werden.</p>
+	<ul>
+		<li onclick="show('privat')"><b>Private IP-Adressen</b></li>
+		<div class="unsichtbar" id="privat">
+			<p>Bestimmte Adressbereiche werden ausschließlich in privaten Netzwerken verwendet, das heißt sie werden nicht im Internet geroutet.</p>
+			<div class="bsp">
+				<p>Es gibt drei Klassen von Privaten IP-Adressbereichen, die jedem frei zur Verfügung stehen:</p>
+				<p>Typ A:</p><p class="adresse" onclick="show('A')"><b>10</b>.0.0.0</p>
+				<p class="unsichtbar" id="A">Eine private IP-Adresse vom Typ A hat einen Adressbereich von der Größe 255<sup>3</sup>.</p>
+				<p>Typ B:</p><p class="adresse" onclick="show('B')"><b>172.16</b>.0.0</p>
+				<p class="unsichtbar" id="B">Eine private IP-Adresse vom Typ B hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
+				<p>Typ C:</p><p class="adresse" onclick="show('C')"><b>192.168.</b>.0.0</p>
+				<p class="unsichtbar" id="C">Eine private IP-Adresse vom Typ C hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
+			</div>
+			<p>In einem privaten Netzwerk hat ausschließlich der Router eine öffentliche IP-Adresse, also eine IP-Adresse die regulär im Internet geroutet werden kann. Jedem Netzwerkteilnehmer wird eine IP-Adresse aus einem der drei oben genannten Adressbereiche zugewiesen.</p>
+			<p>Möchten die Geräte im privaten Netzwerk untereinander kommunizieren nutzen sie ihre privaten IP-Adressen.</p>
+			<p>Möchte ein Netzwerkteilnehmer mit einer privaten IP-Adresse beispielsweise eine Website aufrufen, wird die Anfrage erst intern an den Router weitergeleitet. Hier wird die private Quell-IP-Adresse mit Hilfe von Network Address Translation (NAT) zu einer öffentlichen umgewandelt. Der Router hat sich gemerkt von welchem Netzwerkteilnehmer, die Anfrage gesendet wurde und leitet die Antwort an diesen weiter.</p>
+		</div>
+		<li onclick="show('na')"><b>Netzadressen</b></li>
+		<div class="unsichtbar" id="na">
+			<div class="bsp"><p class="adresse">100.200.0.<b>0</b></p></div>
+			<p>Netzadressen sind IP-Adressen die mit einer 0 enden. Sie stehen nicht für einen einzelnen Host sondern für das Subnetz.</p>
+		</div>
+		<li onclick="show('broadcast')"><b>Broadcast-Adressen</b></li>
+		<div class="unsichtbar" id="broadcast">
+			<div class="bsp"><p class="adresse">100.200.0.<b>255</b></p></div>
+			<p>Broadcast-Adressen sind IP-Adressen, die mit einer 255 enden. Über die Broadcast-Adresse können alle Hosts im entsprechenden Subnetz angesprochen werden.</p>
+		</div>
+		<li onclick="show('lh')"><b>local host</b></li>
+		<div class="unsichtbar" id="lh">
+			<div class="bsp"><p class="adresse">127.0.0.1</p></div>
+			<p>IP-Pakete, die an diese Adresse gesendet werden, verlassen ihren Host nicht, sondern werden an andere laufende Prozesse auf diesem Computer weitergeleitet.</p>
+		</div>
+	</ul>
 </body>
 </html>
