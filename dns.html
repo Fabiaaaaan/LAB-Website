@@ -6,8 +6,12 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function show() {
-			document.getElementsByClassName("unsichtbar")[0].style.display = "block";
+		function show(element) {
+			document.getElementById(element).style.display = "block";
+			if (element == "domain") {
+				document.getElementById("rot").style.color = "#FF6961";
+				document.getElementById("gelb").style.color = "#FDFD96";
+			}
 		}
 	</script>
 </head>
@@ -35,17 +39,32 @@
 		</div>
 	</nav>
 	<h1>Domain Name System</h1>
-	<p>Wenn ein Nutzer über einen Domainnamen auf eine Website zugreifen möchte, werden für die Interaktion zwischen Client (Computer des Nutzers) und Server IP-Adressen benötigt.</p>
-	<p>Das Domain Name System (DNS) ist ein Verzeichnisdienst im Internet. Im Domain Name System sind für jeden Domainnamen IP-Adressen des entsprechenden Servers hinterlegt. Verschiedene über die Welt verteilte DNS-Server übersetzen die Domainnamen in IP-Adressen.</p>
-	<hr>
-	<div class="bsp" onclick="show()">
+	<p>Damit die Verbindung zu einem Server aufgebaut werden kann, wird die IP-Adresse des Servers benötigt.</p>
+	<p>Durch das <b>Domain Name System</b> (DNS) kann ein Nutzer eine Website öffnen ohne die entsprechende IP-Adresse zu kennen. Das DNS übersetzt also Domain-Namen in IP-Adressen.</p>
+	<div class="bsp" onclick="show('hansenbergde')">
 			<p class="weiss mt0">Beispiel:</p>
 			<div class="searchbar"><span>www.hansenberg.de</span></div>
-			<div class="unsichtbar">
+			<div class="unsichtbar" id="hansenbergde">
 				<p>=</p>
 				<div class="searchbar"><span>178.32.80.254</span></div>
 			</div>
 	</div>
 	<hr>
+	<h2>Domain-Namen</h2>
+	<div class="bsp" onclick="show('domain')">
+		<p class="adresse"><span id="rot">hansenberg</span>.<span id="gelb">de</span></p>
+		<div class="unsichtbar" id="domain">
+			<p class="rot sld">Second Level Domain</p>
+			<p class="gelb tld">Top Level Domain</p>
+		</div>
+	</div>
+	<hr>
+	<h2>Wie funktioniert eine DNS-Abfrage?</h2>
+	<ol>
+		<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
+		<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
+		<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
+		<li>Der Rootserver gibt dem Resolver an in welcher Top-Level-Domain sich die Website befindet.</li>
+	</ol>
 </body>
 </html>
