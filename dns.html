@@ -11,6 +11,8 @@
 			if (element == "domain") {
 				document.getElementById("rot").style.color = "#FF6961";
 				document.getElementById("gelb").style.color = "#FDFD96";
+			} else {
+				document.getElementById("pfeil" + (element - 1)).style.display = "none";
 			}
 		}
 	</script>
@@ -63,9 +65,31 @@
 	<h2>Wie funktioniert eine DNS-Abfrage?</h2>
 	<ol>
 		<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
-		<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
-		<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
-		<li>Der Rootserver gibt dem Resolver an in welcher Top-Level-Domain sich die Website befindet.</li>
+		<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
+		<div class="unsichtbar" id="2">
+			<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
+			<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
+			<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
+		</div>
+		<div class="unsichtbar" id="3">
+			<li><b>Der Rootserver gibt dem Resolver an in welcher Top-Level-Domain sich die Website befindet.</b></li>
+			<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
+		</div>
+		<div class="unsichtbar" id="4">
+			<li><b></b></li>
+			<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
+		</div>
+		<div class="unsichtbar" id="5">
+			<li><b></b></li>
+			<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
+		</div>
+		<div class="unsichtbar" id="6">
+			<li><b></b></li>
+			<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
+		</div>
+		<div class="unsichtbar" id="7">
+			<li><b></b></li>
+		</div>
 	</ol>
 </body>
 </html>
