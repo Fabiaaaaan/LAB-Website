@@ -1,3 +1,4 @@
+
 /* Styles für Navigationsleiste */
 .navbar {
   background-color: #002277;
@@ -60,7 +61,6 @@
 /* Styles für einzelne Seiten */
 h1 {
   font-size: 56px;
-  margin-top: 112px;
 }
 
 h1, h2, h3{
@@ -89,6 +89,7 @@ p {
 }
 
 body {
+  background-color: #ECECEC;
   margin: 0;
 }
 
@@ -120,6 +121,17 @@ table, tr, td  {
   font-family: tahoma;
 }
 
+.text-box {
+  background-color: white;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  width: 90%
+}
+
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
@@ -149,7 +161,6 @@ table, tr, td  {
   font-family: consolas;
   padding: 5px 5px;
 }
-
 
 /* Beispiele Adressen */
 .bsp {

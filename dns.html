@@ -41,55 +41,57 @@
 		</div>
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
-	<h1>Domain Name System</h1>
-	<p>Damit die Verbindung zu einem Server aufgebaut werden kann, wird die IP-Adresse des Servers benötigt.</p>
-	<p>Durch das <b>Domain Name System</b> (DNS) kann ein Nutzer eine Website öffnen ohne die entsprechende IP-Adresse zu kennen. Das DNS übersetzt also Domain-Namen in IP-Adressen.</p>
-	<div class="bsp" onclick="show('hansenbergde')">
-			<p class="weiss mt0">Beispiel:</p>
-			<div class="searchbar"><span>www.hansenberg.de</span></div>
-			<div class="unsichtbar" id="hansenbergde">
-				<p>=</p>
-				<div class="searchbar"><span>178.32.80.254</span></div>
+	<div class="text-box">
+		<h1>Domain Name System</h1>
+		<p>Damit die Verbindung zu einem Server aufgebaut werden kann, wird die IP-Adresse des Servers benötigt.</p>
+		<p>Durch das <b>Domain Name System</b> (DNS) kann ein Nutzer eine Website öffnen ohne die entsprechende IP-Adresse zu kennen. Das DNS übersetzt also Domain-Namen in IP-Adressen.</p>
+		<div class="bsp" onclick="show('hansenbergde')">
+				<p class="weiss mt0">Beispiel:</p>
+				<div class="searchbar"><span>www.hansenberg.de</span></div>
+				<div class="unsichtbar" id="hansenbergde">
+					<p>=</p>
+					<div class="searchbar"><span>178.32.80.254</span></div>
+				</div>
+		</div>
+		<hr>
+		<h2>Domain-Namen</h2>
+		<div class="bsp" onclick="show('domain')">
+			<p class="adresse"><span id="rot">hansenberg</span>.<span id="gelb">de</span></p>
+			<div class="unsichtbar" id="domain">
+				<p class="rot sld">Second Level Domain</p>
+				<p class="gelb tld">Top Level Domain</p>
 			</div>
+		</div>
+		<hr>
+		<h2>Wie funktioniert eine DNS-Abfrage?</h2>
+		<ol>
+			<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
+			<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
+			<div class="unsichtbar" id="2">
+				<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
+				<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
+				<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="3">
+				<li><b>Der Rootserver gibt dem Resolver an in welcher Top-Level-Domain sich die Website befindet.</b></li>
+				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="4">
+				<li><b></b></li>
+				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="5">
+				<li><b></b></li>
+				<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="6">
+				<li><b></b></li>
+				<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="7">
+				<li><b></b></li>
+			</div>
+		</ol>
 	</div>
-	<hr>
-	<h2>Domain-Namen</h2>
-	<div class="bsp" onclick="show('domain')">
-		<p class="adresse"><span id="rot">hansenberg</span>.<span id="gelb">de</span></p>
-		<div class="unsichtbar" id="domain">
-			<p class="rot sld">Second Level Domain</p>
-			<p class="gelb tld">Top Level Domain</p>
-		</div>
-	</div>
-	<hr>
-	<h2>Wie funktioniert eine DNS-Abfrage?</h2>
-	<ol>
-		<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
-		<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
-		<div class="unsichtbar" id="2">
-			<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
-			<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
-			<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
-		</div>
-		<div class="unsichtbar" id="3">
-			<li><b>Der Rootserver gibt dem Resolver an in welcher Top-Level-Domain sich die Website befindet.</b></li>
-			<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
-		</div>
-		<div class="unsichtbar" id="4">
-			<li><b></b></li>
-			<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
-		</div>
-		<div class="unsichtbar" id="5">
-			<li><b></b></li>
-			<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
-		</div>
-		<div class="unsichtbar" id="6">
-			<li><b></b></li>
-			<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
-		</div>
-		<div class="unsichtbar" id="7">
-			<li><b></b></li>
-		</div>
-	</ol>
 </body>
 </html>
