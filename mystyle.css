@@ -1,3 +1,8 @@
+html {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* Styles für Navigationsleiste */
 .navbar {
   background-color: #002277;
@@ -60,7 +65,6 @@
 /* Styles für einzelne Seiten */
 h1 {
   font-size: 56px;
-  margin-top: 112px;
 }
 
 h1, h2, h3{
@@ -89,6 +93,7 @@ p {
 }
 
 body {
+  background-color: #ECECEC;
   margin: 0;
 }
 
@@ -120,6 +125,17 @@ table, tr, td  {
   font-family: tahoma;
 }
 
+.text-box {
+  background-color: white;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  width: 90%
+}
+
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
@@ -149,7 +165,6 @@ table, tr, td  {
   font-family: consolas;
   padding: 5px 5px;
 }
-
 
 /* Beispiele Adressen */
 .bsp {
@@ -227,7 +242,7 @@ table, tr, td  {
 }
 
 /* Internet Protocol */
-li {
+ul li {
   font-family: consolas;
   font-size: 32px;
   margin-top: 36px;
@@ -280,6 +295,29 @@ td:hover .dropdown-content p {
   margin-right: auto;
   text-align: center;
   width: 70%;
+}
+
+ol li {
+  font-family: tahoma;
+  font-size: 24px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.sld {
+  margin-left: 5%;
+  width: 70%;
+}
+
+.pfeil {
+  color: white;
+  background-color: #0055bb;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48px;
+  padding-bottom: 12px;
+  padding-top: 12px;
 }
 
 /* MAC-Adressen */

@@ -40,119 +40,121 @@
 		</div>
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
-	<h1>Das Internet Protocol (IP)</h1>
-	<p>Wir kennen nun den Aufbau von den Adressen des Internet Protocols, kurz: IP. Doch was ist eigentlich seine Funktion?</p>
-	<p>Das Internet Protocol ist ein Netzwerkprotokoll, den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Dadurch, dass die Datenpakete auf verschiedenen Routen vom Absender zum Empfänger gelangen können, kann es sein, dass die Pakete in einer anderen Reinfolge beim Empfänger ankommen oder einzelne Datenpakete unterwegs verloren gehen. Andere Protokolle sind dafür zuständig, die angekommenen Datenpakete auf Vollständigkeit zu überprüfen und zu ordnen.</p>
-	<hr>
-	<h2>Subnetting und Routing</h2>
-	<p><b>Subnetting:</b></p>
-	<p>Subnetting ist die Unterteilung eines Netzwerks in kleinere Teilentzwerke: Subnetze.</p>
-	<p>Innerhalb eines Subnets haben die IP-Adressen aller Hosts den gleichen Netzwerkteil</p>
-	<p>Sollen IP-Datenpakete versandt werden, werden zuerst die Netzwerkteile der Quell- und die Ziel-IP-Adressen miteinander verglichen. Stimmen diese überein befinden sich Absender und Empfänger im gleichen Subnetz und können direkt miteinander kommunizieren.</p>
-	<br>
-	<p><b>Routing</b></p>
-	<p>Stimmen die Netzwerkteile von Absender und Empfänger nicht überein, befinden sie sich in unterschiedlichen Subnetzen. Das IP-Datenpaket wird nun zuerst an den Default Gateway des Absenders weitergeleitet. Ein Gateway ist eine IP-Adresse eines Routers, die wie eine Haustür zu einem Subnetz funktioniert:</p>
-	<p>Bei jedem Gateway wird überprüft, ob sich der Absender im Netzwerk des Gateways befindet, also ob die IP-Adressen des Gateways und des Empfängers übereinstimmen. Ist dies der Fall, wird es an den Emfänger weitergeleitet. Sonst leitet der Router das Datenpaket an den nächsten Gateway weiter. Das Verfahren wird so lange wiederholt, bis das Netzwerk des Empfängers gefunden wurde oder die TTL abgelaufen ist. Hierbei wird in Routing-Tabellen bestimmt, an welchen Gateway das Datenpaket als nächstes weitergeleitet wird.</p>
-	<hr>
-	<h2>IP-Pakete</h2>
-	<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>
-  <p>IP-Pakete, auch IP-Datagrame genannt, werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
-	<p><b>Fragmentierung:</b> Jede Netzwerkschnittstelle hat eine Maximalgröße in Byte, die ein Paket, das diese passieren möchte, haben kann: die MTU (Maximum Transmission Unit). Auf seinem Weg, kann es passieren, dass ein IP-Paket zu groß ist und somit fragmentiert (zerteilt) werden muss. Die Fragmente werden separat weitergeschickt und am Ziel wieder zusammengesetzt.</p> <!-- Eigentlich werden die Datenpakete meist schon vom TCP aus eben diesem Grund zerlegt, aber werden andere Protokolle, wie das UDP oder das ICMP verwendet, werden größere Segmente versendet und das IP muss die Aufgabe der Segmentierung übernehmen.<!-->
-	<p style="margin-top: 36px"><b>IPv4-Paket:</b></p>
-	<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png">
-	<div style="text-align: center;">
-		<table class="unsichtbar datagram-tabelle" id="inhalt">
-			<tr>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-				<th>5</th>
-				<th>6</th>
-				<th>7</th>
-				<th>8</th>
-				<th>9</th>
-				<th>10</th>
-				<th>11</th>
-				<th>12</th>
-				<th>13</th>
-				<th>14</th>
-				<th>15</th>
-				<th>16</th>
-				<th>17</th>
-				<th>18</th>
-				<th>19</th>
-				<th>20</th>
-				<th>21</th>
-				<th>22</th>
-				<th>23</th>
-				<th>24</th>
-				<th>25</th>
-				<th>26</th>
-				<th>27</th>
-				<th>28</th>
-				<th>29</th>
-				<th>30</th>
-				<th>31</th>
-				<th>32</th>
-			</tr>
-			<tr>
-				<td colspan="4">Version <div class="dropdown-content"><p>gibt an welche Version des Internet Protocols verwendet wird</p></div></td>
-				<td colspan="4">Headerlänge<div class="dropdown-content"><p>gibt Länge vom IP-Header als Vielfaches von 32 an</div></td>
-				<td colspan="8">Servicetyp<div class="dropdown-content"><p>kann für die Priorisierung von IP-Paketen verwendet werden</p></div></td>
-				<td colspan="16">Gesamtlänge<div class="dropdown-content"><p>gibt die Gesamtlänge des IP-Pakets an</div></td>
-			</tr>
-			<tr>
-				<td colspan="16">Kennung<div class="dropdown-content"><p>Ist ein IP-Paket fragmentiert, haben alle Fragmente die gleiche Kennung, die angibt, zu welchem IP-Paket sie gehören.</p></div></td>
-				<td colspan="3">Flags<div class="dropdown-content"><p>Das erste Bit ist immer auf 0 gesetzt.<br>Hat das zweite Bit den Wert 1, so darf das IP-Paket nicht fragmentiert werden.<br>Hat das dritte Bit einen Wert von 1, so folgen weitere Fragmente. Dementsprechend gibt ein Wert von 0 an, dass es sich um das letzte Fragment handelt.</p></div></td>
-				<td colspan="13">Fragment-Offset<div class="dropdown-content"><p>gibt die Position des Fragments im originalen fragmentierten IP-Paket an</div></td>
-			</tr>
-			<tr>
-				<td colspan="8">Lebensdauer<div class="dropdown-content"><p>Die Lebensdauer, auch Time To Live (TTL) genannt, gibt an, wie viele Stationen ein IP-Paket durchlaufen kann bis es verworfen wird. Dies dient dazu, die Belastung des Netzwerks durch unzustellbare IP-Pakete zu minimieren. Der vor Versand definierten Lebensdauer wird jedes Mal 1 abgezogen, wenn das Paket einen Router passiert. Bei einem Wert von 0 wird das Paket verworfen und der aktuelle Router sendet eine Fehlermeldung an den Absender zurück.</p></div></td>
-				<td colspan="8">Protokoll<div class="dropdown-content"><p>gibt übergeordnetes Transportprotokoll an</p></div></td>
-				<td colspan="16">Header-Checksumme<div class="dropdown-content"><p>Die Header-Checksumme sichert die Korrektheit des IP-Headers. Sie wird bei jeder Station auf dem Weg des IP-Pakets neu berechnet.</div></td>
-			</tr>
-			<tr><td colspan="32">Quell-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Absenders</p></div></td></tr>
-			<tr><td colspan="32">Ziel-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Empfängers</div></td></tr>
-			<tr><td colspan="32">Optionen<br>...<div class="dropdown-content"><p>enthält optionale Informationen zu Routing-, Debugging-, Sicherheits- und Statistikfunktionen. Diese werden hauptsächlich für Diagnosezwecke verwendet.</p></div></td></tr>
-			<tr><td colspan="32" style="background-color: #80aadd;">Daten<br>...</td></tr>
-		</table>
-	</div>
-	<hr>
-	<h2>IP-Adressen mit besonderer Bedeutung</h2>
-	<p>Bestimmte IP-Adressbereiche haben eine besondere Funktion. Sie können nur zu diesem Zweck vergeben werden.</p>
-	<ul>
-		<li onclick="show('privat')"><b>Private IP-Adressen</b></li>
-		<div class="unsichtbar" id="privat">
-			<p>Bestimmte Adressbereiche werden ausschließlich in privaten Netzwerken verwendet, das heißt sie werden nicht im Internet geroutet.</p>
-			<div class="bsp">
-				<p>Es gibt drei Klassen von Privaten IP-Adressbereichen, die jedem frei zur Verfügung stehen:</p>
-				<p>Typ A:</p><p class="adresse" onclick="show('A')"><b>10</b>.0.0.0</p>
-				<p class="unsichtbar" id="A">Eine private IP-Adresse vom Typ A hat einen Adressbereich von der Größe 255<sup>3</sup>.</p>
-				<p>Typ B:</p><p class="adresse" onclick="show('B')"><b>172.16</b>.0.0</p>
-				<p class="unsichtbar" id="B">Eine private IP-Adresse vom Typ B hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
-				<p>Typ C:</p><p class="adresse" onclick="show('C')"><b>192.168.</b>.0.0</p>
-				<p class="unsichtbar" id="C">Eine private IP-Adresse vom Typ C hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
+	<div class="text-box">
+		<h1>Das Internet Protocol (IP)</h1>
+		<p>Wir kennen nun den Aufbau von den Adressen des Internet Protocols, kurz: IP. Doch was ist eigentlich seine Funktion?</p>
+		<p>Das Internet Protocol ist ein Netzwerkprotokoll, den erfolgreichen Versand von Datenpaketen vom Absender zum Empfänger gewährleistem soll. Hierbei ist es nur dafür zuständig das die Daten beim richtigen Empfänger ankommen. Dadurch, dass die Datenpakete auf verschiedenen Routen vom Absender zum Empfänger gelangen können, kann es sein, dass die Pakete in einer anderen Reinfolge beim Empfänger ankommen oder einzelne Datenpakete unterwegs verloren gehen. Andere Protokolle sind dafür zuständig, die angekommenen Datenpakete auf Vollständigkeit zu überprüfen und zu ordnen.</p>
+		<hr>
+		<h2>Subnetting und Routing</h2>
+		<p><b>Subnetting:</b></p>
+		<p>Subnetting ist die Unterteilung eines Netzwerks in kleinere Teilentzwerke: Subnetze.</p>
+		<p>Innerhalb eines Subnets haben die IP-Adressen aller Hosts den gleichen Netzwerkteil</p>
+		<p>Sollen IP-Datenpakete versandt werden, werden zuerst die Netzwerkteile der Quell- und die Ziel-IP-Adressen miteinander verglichen. Stimmen diese überein befinden sich Absender und Empfänger im gleichen Subnetz und können direkt miteinander kommunizieren.</p>
+		<br>
+		<p><b>Routing</b></p>
+		<p>Stimmen die Netzwerkteile von Absender und Empfänger nicht überein, befinden sie sich in unterschiedlichen Subnetzen. Das IP-Datenpaket wird nun zuerst an den Default Gateway des Absenders weitergeleitet. Ein Gateway ist eine IP-Adresse eines Routers, die wie eine Haustür zu einem Subnetz funktioniert:</p>
+		<p>Bei jedem Gateway wird überprüft, ob sich der Absender im Netzwerk des Gateways befindet, also ob die IP-Adressen des Gateways und des Empfängers übereinstimmen. Ist dies der Fall, wird es an den Emfänger weitergeleitet. Sonst leitet der Router das Datenpaket an den nächsten Gateway weiter. Das Verfahren wird so lange wiederholt, bis das Netzwerk des Empfängers gefunden wurde oder die TTL abgelaufen ist. Hierbei wird in Routing-Tabellen bestimmt, an welchen Gateway das Datenpaket als nächstes weitergeleitet wird.</p>
+		<hr>
+		<h2>IP-Pakete</h2>
+		<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>
+	  <p>IP-Pakete, auch IP-Datagrame genannt, werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
+		<p><b>Fragmentierung:</b> Jede Netzwerkschnittstelle hat eine Maximalgröße in Byte, die ein Paket, das diese passieren möchte, haben kann: die MTU (Maximum Transmission Unit). Auf seinem Weg, kann es passieren, dass ein IP-Paket zu groß ist und somit fragmentiert (zerteilt) werden muss. Die Fragmente werden separat weitergeschickt und am Ziel wieder zusammengesetzt.</p> <!-- Eigentlich werden die Datenpakete meist schon vom TCP aus eben diesem Grund zerlegt, aber werden andere Protokolle, wie das UDP oder das ICMP verwendet, werden größere Segmente versendet und das IP muss die Aufgabe der Segmentierung übernehmen.<!-->
+		<p style="margin-top: 36px"><b>IPv4-Paket:</b></p>
+		<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png">
+		<div style="text-align: center;">
+			<table class="unsichtbar datagram-tabelle" id="inhalt">
+				<tr>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+					<th>9</th>
+					<th>10</th>
+					<th>11</th>
+					<th>12</th>
+					<th>13</th>
+					<th>14</th>
+					<th>15</th>
+					<th>16</th>
+					<th>17</th>
+					<th>18</th>
+					<th>19</th>
+					<th>20</th>
+					<th>21</th>
+					<th>22</th>
+					<th>23</th>
+					<th>24</th>
+					<th>25</th>
+					<th>26</th>
+					<th>27</th>
+					<th>28</th>
+					<th>29</th>
+					<th>30</th>
+					<th>31</th>
+					<th>32</th>
+				</tr>
+				<tr>
+					<td colspan="4">Version <div class="dropdown-content"><p>gibt an welche Version des Internet Protocols verwendet wird</p></div></td>
+					<td colspan="4">Headerlänge<div class="dropdown-content"><p>gibt Länge vom IP-Header als Vielfaches von 32 an</div></td>
+					<td colspan="8">Servicetyp<div class="dropdown-content"><p>kann für die Priorisierung von IP-Paketen verwendet werden</p></div></td>
+					<td colspan="16">Gesamtlänge<div class="dropdown-content"><p>gibt die Gesamtlänge des IP-Pakets an</div></td>
+				</tr>
+				<tr>
+					<td colspan="16">Kennung<div class="dropdown-content"><p>Ist ein IP-Paket fragmentiert, haben alle Fragmente die gleiche Kennung, die angibt, zu welchem IP-Paket sie gehören.</p></div></td>
+					<td colspan="3">Flags<div class="dropdown-content"><p>Das erste Bit ist immer auf 0 gesetzt.<br>Hat das zweite Bit den Wert 1, so darf das IP-Paket nicht fragmentiert werden.<br>Hat das dritte Bit einen Wert von 1, so folgen weitere Fragmente. Dementsprechend gibt ein Wert von 0 an, dass es sich um das letzte Fragment handelt.</p></div></td>
+					<td colspan="13">Fragment-Offset<div class="dropdown-content"><p>gibt die Position des Fragments im originalen fragmentierten IP-Paket an</div></td>
+				</tr>
+				<tr>
+					<td colspan="8">Lebensdauer<div class="dropdown-content"><p>Die Lebensdauer, auch Time To Live (TTL) genannt, gibt an, wie viele Stationen ein IP-Paket durchlaufen kann bis es verworfen wird. Dies dient dazu, die Belastung des Netzwerks durch unzustellbare IP-Pakete zu minimieren. Der vor Versand definierten Lebensdauer wird jedes Mal 1 abgezogen, wenn das Paket einen Router passiert. Bei einem Wert von 0 wird das Paket verworfen und der aktuelle Router sendet eine Fehlermeldung an den Absender zurück.</p></div></td>
+					<td colspan="8">Protokoll<div class="dropdown-content"><p>gibt übergeordnetes Transportprotokoll an</p></div></td>
+					<td colspan="16">Header-Checksumme<div class="dropdown-content"><p>Die Header-Checksumme sichert die Korrektheit des IP-Headers. Sie wird bei jeder Station auf dem Weg des IP-Pakets neu berechnet.</div></td>
+				</tr>
+				<tr><td colspan="32">Quell-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Absenders</p></div></td></tr>
+				<tr><td colspan="32">Ziel-IP-Adresse<div class="dropdown-content"><p>enthält die IP-Adresse des Empfängers</div></td></tr>
+				<tr><td colspan="32">Optionen<br>...<div class="dropdown-content"><p>enthält optionale Informationen zu Routing-, Debugging-, Sicherheits- und Statistikfunktionen. Diese werden hauptsächlich für Diagnosezwecke verwendet.</p></div></td></tr>
+				<tr><td colspan="32" style="background-color: #80aadd;">Daten<br>...</td></tr>
+			</table>
+		</div>
+		<hr>
+		<h2>IP-Adressen mit besonderer Bedeutung</h2>
+		<p>Bestimmte IP-Adressbereiche haben eine besondere Funktion. Sie können nur zu diesem Zweck vergeben werden.</p>
+		<ul>
+			<li onclick="show('privat')"><b>Private IP-Adressen</b></li>
+			<div class="unsichtbar" id="privat">
+				<p>Bestimmte Adressbereiche werden ausschließlich in privaten Netzwerken verwendet, das heißt sie werden nicht im Internet geroutet.</p>
+				<div class="bsp">
+					<p>Es gibt drei Klassen von Privaten IP-Adressbereichen, die jedem frei zur Verfügung stehen:</p>
+					<p>Typ A:</p><p class="adresse" onclick="show('A')"><b>10</b>.0.0.0</p>
+					<p class="unsichtbar" id="A">Eine private IP-Adresse vom Typ A hat einen Adressbereich von der Größe 255<sup>3</sup>.</p>
+					<p>Typ B:</p><p class="adresse" onclick="show('B')"><b>172.16</b>.0.0</p>
+					<p class="unsichtbar" id="B">Eine private IP-Adresse vom Typ B hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
+					<p>Typ C:</p><p class="adresse" onclick="show('C')"><b>192.168.</b>.0.0</p>
+					<p class="unsichtbar" id="C">Eine private IP-Adresse vom Typ C hat einen Adressbereich von der Größe 255<sup>2</sup>.</p>
+				</div>
+				<p>In einem privaten Netzwerk hat ausschließlich der Router eine öffentliche IP-Adresse, also eine IP-Adresse die regulär im Internet geroutet werden kann. Jedem Netzwerkteilnehmer wird eine IP-Adresse aus einem der drei oben genannten Adressbereiche zugewiesen.</p>
+				<p>Möchten die Geräte im privaten Netzwerk untereinander kommunizieren nutzen sie ihre privaten IP-Adressen.</p>
+				<p>Möchte ein Netzwerkteilnehmer mit einer privaten IP-Adresse beispielsweise eine Website aufrufen, wird die Anfrage erst intern an den Router weitergeleitet. Hier wird die private Quell-IP-Adresse mit Hilfe von Network Address Translation (NAT) zu einer öffentlichen umgewandelt. Der Router hat sich gemerkt von welchem Netzwerkteilnehmer, die Anfrage gesendet wurde und leitet die Antwort an diesen weiter.</p>
 			</div>
-			<p>In einem privaten Netzwerk hat ausschließlich der Router eine öffentliche IP-Adresse, also eine IP-Adresse die regulär im Internet geroutet werden kann. Jedem Netzwerkteilnehmer wird eine IP-Adresse aus einem der drei oben genannten Adressbereiche zugewiesen.</p>
-			<p>Möchten die Geräte im privaten Netzwerk untereinander kommunizieren nutzen sie ihre privaten IP-Adressen.</p>
-			<p>Möchte ein Netzwerkteilnehmer mit einer privaten IP-Adresse beispielsweise eine Website aufrufen, wird die Anfrage erst intern an den Router weitergeleitet. Hier wird die private Quell-IP-Adresse mit Hilfe von Network Address Translation (NAT) zu einer öffentlichen umgewandelt. Der Router hat sich gemerkt von welchem Netzwerkteilnehmer, die Anfrage gesendet wurde und leitet die Antwort an diesen weiter.</p>
-		</div>
-		<li onclick="show('na')"><b>Netzadressen</b></li>
-		<div class="unsichtbar" id="na">
-			<div class="bsp"><p class="adresse">100.200.0.<b>0</b></p></div>
-			<p>Netzadressen sind IP-Adressen die mit einer 0 enden. Sie stehen nicht für einen einzelnen Host sondern für das Subnetz.</p>
-		</div>
-		<li onclick="show('broadcast')"><b>Broadcast-Adressen</b></li>
-		<div class="unsichtbar" id="broadcast">
-			<div class="bsp"><p class="adresse">100.200.0.<b>255</b></p></div>
-			<p>Broadcast-Adressen sind IP-Adressen, die mit einer 255 enden. Über die Broadcast-Adresse können alle Hosts im entsprechenden Subnetz angesprochen werden.</p>
-		</div>
-		<li onclick="show('lh')"><b>local host</b></li>
-		<div class="unsichtbar" id="lh">
-			<div class="bsp"><p class="adresse">127.0.0.1</p></div>
-			<p>IP-Pakete, die an diese Adresse gesendet werden, verlassen ihren Host nicht, sondern werden an andere laufende Prozesse auf diesem Computer weitergeleitet.</p>
-		</div>
-	</ul>
+			<li onclick="show('na')"><b>Netzadressen</b></li>
+			<div class="unsichtbar" id="na">
+				<div class="bsp"><p class="adresse">100.200.0.<b>0</b></p></div>
+				<p>Netzadressen sind IP-Adressen die mit einer 0 enden. Sie stehen nicht für einen einzelnen Host sondern für das Subnetz.</p>
+			</div>
+			<li onclick="show('broadcast')"><b>Broadcast-Adressen</b></li>
+			<div class="unsichtbar" id="broadcast">
+				<div class="bsp"><p class="adresse">100.200.0.<b>255</b></p></div>
+				<p>Broadcast-Adressen sind IP-Adressen, die mit einer 255 enden. Über die Broadcast-Adresse können alle Hosts im entsprechenden Subnetz angesprochen werden.</p>
+			</div>
+			<li onclick="show('lh')"><b>local host</b></li>
+			<div class="unsichtbar" id="lh">
+				<div class="bsp"><p class="adresse">127.0.0.1</p></div>
+				<p>IP-Pakete, die an diese Adresse gesendet werden, verlassen ihren Host nicht, sondern werden an andere laufende Prozesse auf diesem Computer weitergeleitet.</p>
+			</div>
+		</ul>
+	</div>
 </body>
 </html>

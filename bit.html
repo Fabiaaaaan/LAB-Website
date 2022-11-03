@@ -36,85 +36,89 @@
 		</div>
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
-	<h1>Bit und Byte</h1>
-	<h2>Bit</h2>
-	<p>Ein Bit ist die kleinste Informationseinheit in der Informatik. Ein Bit beschreibt eine Stelle einer Binärzahl, kann also 2 verschiedene Zustände repräsentieren. Eine Einstellige Binärzahl hat einen Informationsgehalt von einem Bit</p>
-	<div style="text-align: center">
-		<p>Hier ist eine Binärzahl mit n bits. Jede dieser Bits kann 2 Zustände repräsentieren</p>
-		<pre>
+	<div class="text-box">
+		<h1>Bit und Byte</h1>
+		<h2>Bit</h2>
+		<p>Ein Bit ist die kleinste Informationseinheit in der Informatik. Ein Bit beschreibt eine Stelle einer Binärzahl, kann also 2 verschiedene Zustände repräsentieren. Eine Einstellige Binärzahl hat einen Informationsgehalt von einem Bit</p>
+		<div style="text-align: center">
+			<p>Hier ist eine Binärzahl mit n bits. Jede dieser Bits kann 2 Zustände repräsentieren</p>
+			<pre>
 
-		</pre>
-		<table class="bit-tabelle">
-			<tr>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0...0</td>
-				<td>0</td>
-			</tr>
-		</table>
-		<br>
-		<table class="zwei-tabelle">
-			<tr>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2*</td>
-				<td>2...2*</td>
-				<td>2</td>
-			</tr>
-		</table>
-		<br>
-		<p>n Male</p>
-		<pre>
+			</pre>
+			<table class="bit-tabelle">
+				<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0...0</td>
+					<td>0</td>
+				</tr>
+			</table>
+			<br>
+			<table class="zwei-tabelle">
+				<tr>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2*</td>
+					<td>2...2*</td>
+					<td>2</td>
+				</tr>
+			</table>
+			<br>
+			<p>n Male</p>
+			<pre>
 
-		</pre>
-		<p>Demnach kann eine Binärzahlzahl mit n Bits 2<sup>n</sup> Zustände repräsentieren</p>
-		<p>Ein Lehrer hat 8 Schüler und da er ihre Namen immer vergisst, möchte diese mit Binärzahlen durchnummerieren. Da man mit 3 Binärstellen 8 Zahlen darstellen kann, braucht er 3 Bits, um jedem seiner Schüler eindeutig eine Zahl zuzuweisen</p>
-		<table class="bit-beispiel">
-			<tr>
-				<th>Name</th>
-				<td>Likuan</td>
-				<td>Paul</td>
-				<td>Tim</td>
-				<td>Max</td>
-				<td>Liam</td>
-				<td>Fabian</td>
-				<td>Roman</td>
-				<td>Emil</td>
-			</tr>
-			<tr>
-				<th>Nummer</th>
-				<td>000</td>
-				<td>001</td>
-				<td>010</td>
-				<td>011</td>
-				<td>100</td>
-				<td>101</td>
-				<td>110</td>
-				<td>111</td>
-			</tr>
-		</table>
+			</pre>
+			<p>Demnach kann eine Binärzahlzahl mit n Bits 2<sup>n</sup> Zustände repräsentieren</p>
+			<p>Ein Lehrer hat 8 Schüler und da er ihre Namen immer vergisst, möchte diese mit Binärzahlen durchnummerieren. Da man mit 3 Binärstellen 8 Zahlen darstellen kann, braucht er 3 Bits, um jedem seiner Schüler eindeutig eine Zahl zuzuweisen</p>
+			<table class="bit-beispiel">
+				<tr>
+					<th>Name</th>
+					<td>Likuan</td>
+					<td>Paul</td>
+					<td>Tim</td>
+					<td>Max</td>
+					<td>Liam</td>
+					<td>Fabian</td>
+					<td>Roman</td>
+					<td>Emil</td>
+				</tr>
+				<tr>
+					<th>Nummer</th>
+					<td>000</td>
+					<td>001</td>
+					<td>010</td>
+					<td>011</td>
+					<td>100</td>
+					<td>101</td>
+					<td>110</td>
+					<td>111</td>
+				</tr>
+			</table>
+		</div>
+		<p>Die nächtsgrößere Einheit in der Informatik ist ein Byte (auch Oktett). Ein Byte beschreibt eine Folge aus 8 Bits. Es repräsentiert also 28 = 256 verschiedene Zustände. Man kann ein Byte auch als zweistellige Hexadezimalzahl aufschreiben. Dabei stellt die erste Hexadezimalziffer die ersten vier Bits dar, und die zweite Hexadezimalziffer die letzten 4 Bits dar</p>
+		<div class="bsp">
+			<p class="mt0">Beispiel:</p>
+			<p><b>Binärzahl</b></p>
+			<p class="adresse"><span style="color: red">1101</span><span style="color: yellow">0110</span></p>
+			<p><b>Hexadezimalzahl</b></p>
+			<p class="adresse"><span style="color: red">d</span><span style="color: yellow">6</span></p>
+			<p><b>Dezimalzahl</b></p>
+			<p class="adresse">214</p>
+		</div>
+		<p>Eine IPv.4-Adresse besteht aus 4*8 Bits, also 4 Bytes. In der Befehlszeile deines Rechners werden dir 4 Dezimalzahlen von 0-255 angezeigt, die durch Punkte abgetrennt sind</p>
 	</div>
-	<p>Die nächtsgrößere Einheit in der Informatik ist ein Byte (auch Oktett). Ein Byte beschreibt eine Folge aus 8 Bits. Es repräsentiert also 28 = 256 verschiedene Zustände. Man kann ein Byte auch als zweistellige Hexadezimalzahl aufschreiben. Dabei stellt die erste Hexadezimalziffer die ersten vier Bits dar, und die zweite Hexadezimalziffer die letzten 4 Bits dar</p>
-	<div class="bsp">
-		<p class="mt0">Beispiel:</p>
-		<p><b>Binärzahl</b></p>
-		<p class="adresse"><span style="color: red">1101</span><span style="color: yellow">0110</span></p>
-		<p><b>Hexadezimalzahl</b></p>
-		<p class="adresse"><span style="color: red">d</span><span style="color: yellow">6</span></p>
-		<p><b>Dezimalzahl</b></p>
-		<p class="adresse">214</p>
-	</div>
+<<<<<<< HEAD
 	<p>Eine IPv.4-Adresse besteht aus 4*8 Bits, also 4 Bytes. In der Befehlszeile deines Rechners werden dir 4 Dezimalzahlen von 0-255 angezeigt, die durch Punkte abgetrennt sind</p>
 	<div class="bsp" id="bsp1" onclick="ip4Show()">
 		<p class="mt0">Beispiel:</p>
@@ -124,5 +128,7 @@
 			<p class="adresse">11000000.10101000</p>
 		</div>
 	</div>
+=======
+>>>>>>> c2fb6e3c5a4f014d9a4ba82bb4cf66e51a97f52d
 </body>
 </html>
