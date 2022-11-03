@@ -54,7 +54,9 @@
 				</div>
 		</div>
 		<hr>
-		<h2>Domain-Namen</h2>
+		<h2>Domainnamen</h2>
+		<p>Ein Domainname ist ein weltweit einmaliger Name für einen abgegrenzten Teilbereich des Internets, wie beispielsweise ein Website.</p>
+		<p>Der Domainname bzw. seine einzelnen Bestandteile geben an, wo die Website im hierarchisch strukturierten Domain Name System zu finden ist.</p>
 		<div class="bsp" onclick="show('domain')">
 			<p class="adresse"><span id="rot">hansenberg</span>.<span id="gelb">de</span></p>
 			<div class="unsichtbar" id="domain">
@@ -77,20 +79,20 @@
 				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="4">
-				<li><b>Der Rooter schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains.</b></li>
+				<li><b>Der Rooter schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains, um die IP-Adresse des richtigen Namenservers zu ermitteln.</b></li>
 				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="5">
-				<li><b></b></li>
+				<li><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li>
 				<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="6">
-				<li><b></b></li>
+				<li><b>Der Namenserver sendet die IP-Adresse des Namenserver an den Resolver, welcher diese an den Browser weitergibt.</b></li>
+				<p>Da die Anfrage erfolgreich war landen die informationen im <b>Cache</b>, sodass sie beim nächstem Mal direkt abgerufen werden können.</p>
 				<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="7">
-				<li><b></b></li>
-				<p>War die Anfrage erfolgreich landen die Informationen für einen bestimmten Zeitraum im Cache und können so beim nächstem Mal direkt abgerufen werden.</p>
+				<li><b>Der Browser kann nun eine Anfrage an die erhaltene IP-Adresse schicken.</b></li>
 			</div>
 		</ol>
 	</div>
