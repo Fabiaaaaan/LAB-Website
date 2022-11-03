@@ -5,6 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
+	<script>
+		function ip4Show() {
+			document.getElementById("ip4").style.display = "block";
+			document.getElementById("bsp1").style.maxWidth = "700px";
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -110,5 +116,13 @@
 		<p class="adresse">214</p>
 	</div>
 	<p>Eine IPv.4-Adresse besteht aus 4*8 Bits, also 4 Bytes. In der Befehlszeile deines Rechners werden dir 4 Dezimalzahlen von 0-255 angezeigt, die durch Punkte abgetrennt sind</p>
+	<div class="bsp" id="bsp1" onclick="ip4Show()">
+		<p class="mt0">Beispiel:</p>
+		<p class="adresse">192.168.101.64</p>
+		<div class="unsichtbar" id="ip4">
+			<p>=</p>
+			<p class="adresse">11000000.10101000</p>
+		</div>
+	</div>
 </body>
 </html>
