@@ -304,9 +304,22 @@ ol li {
   text-align: center;
 }
 
-.sld {
+.thld {
   margin-left: 5%;
-  width: 70%;
+  width: 30%;
+}
+
+.sld {
+  width: 30%;
+}
+
+.tld {
+  width: 30%;
+}
+
+.pink {
+  color: pink !important;
+  display: inline-block;
 }
 
 .pfeil {

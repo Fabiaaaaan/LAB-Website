@@ -11,6 +11,7 @@
 			if (element == "domain") {
 				document.getElementById("rot").style.color = "#FF6961";
 				document.getElementById("gelb").style.color = "#FDFD96";
+				document.getElementById("pink").style.color= "pink";
 			} else {
 				document.getElementById("pfeil" + (element - 1)).style.display = "none";
 			}
@@ -58,12 +59,17 @@
 		<p>Ein Domainname ist ein weltweit einmaliger Name für einen abgegrenzten Teilbereich des Internets, wie beispielsweise ein Website.</p>
 		<p>Der Domainname bzw. seine einzelnen Bestandteile geben an, wo die Website im hierarchisch strukturierten Domain Name System zu finden ist.</p>
 		<div class="bsp" onclick="show('domain')">
-			<p class="adresse"><span id="rot">hansenberg</span>.<span id="gelb">de</span></p>
+			<p class="adresse"><span id="rot">www</span>.<span id="gelb">hansenberg</span>.<span id="pink">de</span></p>
 			<div class="unsichtbar" id="domain">
-				<p class="rot sld">Second Level Domain</p>
-				<p class="gelb tld">Top Level Domain</p>
+				<p class="rot thld">Third-Level-Domain</p>
+				<p class="gelb sld">Second-Level-Domain</p>
+				<p class="pink tld">Top-Level-Domain</p>
 			</div>
 		</div>
+		<p>Ein Domainname besteht aus Top-Level-Domain, Second-Level-Domain und Third-Level-Domain.</p>
+		<p><b>Top-Level-Domain:</b><br>Die Top-Level-Domain steht am Ende des Domainnamen. Sie können in generische TLDs, wie .com oder .net, und länderspezifische TLDs, wie .de oder .at, eingeteilt werden.</p>
+		<p><b>Second-Level-Domain:</b><br>Die Second-Level-Domain steht vor der TLD. Sie ist innerhalb des Namensraums der TLD einmalig.</b>
+		<p><b>Third-Level-Domain:</b><br>Die Third-Level-Domain steht am Anfang des Domainnamens. Durch die Third-Level-Domain können verschiedene Bereiche einer Domain voneinander getrennt werden. Beispielsweise steht www für Webservices und mail für Mailserver.</p>
 		<hr>
 		<h2>Wie funktioniert eine DNS-Abfrage?</h2>
 		<ol>
