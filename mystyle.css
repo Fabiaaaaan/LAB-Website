@@ -1,3 +1,7 @@
+html {
+  -webkit-user-select: none;
+  user-select: none;
+}
 
 /* Styles für Navigationsleiste */
 .navbar {
