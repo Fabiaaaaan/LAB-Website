@@ -404,3 +404,10 @@ ol li {
 .titlelink:hover {
   color: gray;
 }
+
+/*Urheberschutz*/
+
+.eiffel img {
+  width: 100px;
+  height: 100px;
+}
