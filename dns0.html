@@ -45,7 +45,7 @@
 	<div class="text-box">
 		<h1>Domain Name System</h1>
 		<p>Damit die Verbindung zu einem Server aufgebaut werden kann, wird die IP-Adresse des Servers benötigt.</p>
-		<p>Das <b>Domain Name System</b> übersetzt Domain-Namen in IP-Adressen.</p><!-- Durch das Domain Name System kann ein Nutzer eine Website öffnen ohne die IP-Adresse des entsprechenden Servers zu kennen. Ohne das DNS müsste man genau das. !-->
+		<p>Durch das <b>Domain Name System</b> (DNS) kann ein Nutzer eine Website öffnen ohne die entsprechende IP-Adresse zu kennen. Das DNS übersetzt also Domain-Namen in IP-Adressen.</p>
 		<div class="bsp" onclick="show('hansenbergde')">
 				<p class="weiss mt0">Beispiel:</p>
 				<div class="searchbar"><span>www.hansenberg.de</span></div>
@@ -66,39 +66,39 @@
 				<p class="pink tld">Top-Level-Domain</p>
 			</div>
 		</div>
-		<p>Ein Domainname besteht aus:</p>
-		<ul>
-			<li><b>Top-Level-Domain</b></li>
-			<li><b>Second-Level-Domain</b></li>
-			<li><b>Third-Level-Domain</b></li>
-		</ul>
+		<p>Ein Domainname besteht aus Top-Level-Domain, Second-Level-Domain und Third-Level-Domain.</p>
+		<p><b>Top-Level-Domain:</b><br>Die Top-Level-Domain steht am Ende des Domainnamen. Sie können in generische TLDs, wie .com oder .net, und länderspezifische TLDs, wie .de oder .at, eingeteilt werden.</p>
+		<p><b>Second-Level-Domain:</b><br>Die Second-Level-Domain steht vor der TLD. Sie ist innerhalb des Namensraums der TLD einmalig.</b>
+		<p><b>Third-Level-Domain:</b><br>Die Third-Level-Domain steht am Anfang des Domainnamens. Durch die Third-Level-Domain können verschiedene Bereiche einer Domain voneinander getrennt werden. Beispielsweise steht www für Webservices und mail für Mailserver.</p>
 		<hr>
 		<h2>Wie funktioniert eine DNS-Abfrage?</h2>
 		<ol>
 			<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
 			<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
 			<div class="unsichtbar" id="2">
-				<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li><!-- Der Resolver ist ein Programm, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver. !-->
+				<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li>
+				<p><b>Was ist ein Resolver?</b> Der ist das Program, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</p>
 				<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="3">
-				<li><b>Der Rootserver an in welchem Top-Level-Domain sich die Website befindet.</b></li><!-- der Rootserver gibt es dem Resolver an. !-->
+				<li><b>Der Rootserver gibt dem Resolver an in welchem Top-Level-Domain sich die Website befindet.</b></li>
 				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="4">
-				<li><b>Der Resolver schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains.</b></li><!-- Er möchte die IP-Adresse des richtigen Namenservers ermitteln. !-->
+				<li><b>Der Rooter schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains, um die IP-Adresse des richtigen Namenservers zu ermitteln.</b></li>
 				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="5">
-				<li><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li><!-- der Namenserver sendet die IP-Adresse an den Resolver !-->
+				<li><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li>
 				<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="6">
-				<li><b>Der Resolver gibt die IP-Adresse an den Browser weiter.</b></li>
+				<li><b>Der Namenserver sendet die IP-Adresse des Namenserver an den Resolver, welcher diese an den Browser weitergibt.</b></li>
+				<p>Da die Anfrage erfolgreich war landen die Informationen für eine gewisse Zeit /-85im <b>Cache</b>, sodass sie beim nächstem Mal direkt abgerufen werden können.</p>
 				<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
 			</div>
 			<div class="unsichtbar" id="7">
-				<li style="margin-bottom: 36px;"><b>Der Browser schickt eine Anfrage an die erhaltene IP-Adresse.</b></li>
+				<li style="margin-bottom: 36px;"><b>Der Browser kann nun eine Anfrage an die erhaltene IP-Adresse schicken.</b></li>
 			</div>
 		</ol>
 	</div>

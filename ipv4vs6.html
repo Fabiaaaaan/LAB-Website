@@ -27,6 +27,7 @@
 		function nullenWeg() {
 			document.getElementById("eineNull").innerHTML = "0";
 			document.getElementById("zusammenhängend").innerHTML = "";
+			document.getElementById("abkuerzung").style.width = "600px";
 		}
 
 		function show(element) {
@@ -84,7 +85,7 @@
 		<p>Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
 		<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse.</p>
 		<p>Wandelt man sie in Binärzahlen um, besteht sie aus einer aufeinanderfolgenden Reihe von 1en und 0en.</p>
-		<P>An dem Punkt, wo die 0en auf 1en umspringen beginnt der Netzwerkteil der zugehörigen IP-Adresse.</p>
+		<P>An dem Punkt, wo die 1en auf 0en umspringen beginnt der Netzwerkteil der zugehörigen IP-Adresse.</p>
 		<div class="bsp" id="bsp2" onclick="smShow()">
 			<p class="mt0">Beispiel:</p>
 			<p><b>Subnetzmaske:</b></p>
@@ -103,7 +104,7 @@
 		<p><b>Abkürzen</b></p>
 		<p>Zusammenhängende Blöcke, die ausschließlich aus 0en bestehen können einmal durch zwei Doppelpunkte bagekürzt werden.</p>
 		<p>Andere Blöcke, die aus 0en bestehen, können zu einer einzigen 0 abgekürzt werden.</p>
-		<div class="bsp"style="max-width: 800px" onclick="nullenWeg()">
+		<div class="bsp"style="max-width: 800px" onclick="nullenWeg()" id="abkuerzung">
 			<p class="mt0">Beispiel</p>
 			<p class="adresse">2a02:<span id="eineNull">0000</span>:973f:e78c:<span id="zusammenhängend">0000:0000:0000</span>:e061</p>
 		</div>
