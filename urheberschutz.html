@@ -5,6 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
+	<script>
+		function show(element) {
+			document.getElementById(element).style.display = "block";
+			if (element == "domain") {
+				document.getElementById("rot").style.color = "#FF6961";
+				document.getElementById("gelb").style.color = "#FDFD96";
+				document.getElementById("pink").style.color= "pink";
+			} else {
+				document.getElementById("pfeil" + (element - 1)).style.display = "none";
+			}
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -82,7 +94,25 @@
 		</ul>
 		<hr>
 		<h2>Beispiel<h2>
-		<img src="eiffelturm.JPG">
+		<img style="width:200px;" src="eiffelturm.JPG">
+		<h4>Ich habe im Urlaub ein Foto vom Eiffelturm gemacht. Wer hat jetzt welche Rechte und darf ich das Bild veröffentlichen?</h4>
+		<ul class="ur">
+			<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
+			<div class="unsichtbar" id="2">
+				<li>Ich habe das Urheberrecht, da ich der Urheber des Bildes bin</li>
+				<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="3">
+				<li>Herr Eiffel ist schon länger als 70 Jahre tot, hat also kein Recht an seinem Werk mehr</li>
+				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="4">
+				<li>Die Personen haben kein Recht am eigenen Bild, da sie als Beiwerk zufällig vor dem fotografierten Gebäude stehen</li>
+				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="5">
+				<li>Ich darf das Bild also veröffentlichen und vorführen, wie ich lustig bin</li>
+		</ol>
 	</div>
 </body>
 </html>
