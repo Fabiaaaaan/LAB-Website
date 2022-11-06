@@ -136,6 +136,13 @@ table, tr, td  {
   width: 90%
 }
 
+ul li {
+  font-family: tahoma;
+  font-size: 24px;
+  margin-top: 32px;
+  text-align: center;
+}
+
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
@@ -242,7 +249,7 @@ table, tr, td  {
 }
 
 /* Internet Protocol */
-ul li {
+ul.besondere li {
   font-family: consolas;
   font-size: 32px;
   margin-top: 36px;
@@ -300,13 +307,28 @@ td:hover .dropdown-content p {
 ol li {
   font-family: tahoma;
   font-size: 24px;
-  margin-bottom: 18px;
+  margin-left: 36px;
+  margin-right: 36px;
+  margin-top: 36px;
   text-align: center;
 }
 
-.sld {
+.thld {
   margin-left: 5%;
-  width: 70%;
+  width: 30%;
+}
+
+.sld {
+  width: 30%;
+}
+
+.tld {
+  width: 30%;
+}
+
+.pink {
+  color: pink !important;
+  display: inline-block;
 }
 
 .pfeil {

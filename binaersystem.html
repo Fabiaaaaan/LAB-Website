@@ -6,9 +6,8 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function ip4Show() {
-			document.getElementById("ip4").style.display = "block";
-			document.getElementById("bsp1").style.maxWidth = "700px";
+		function umwandeln() {
+			document.getElementById("umgewandelt").style.display = "block";
 		}
 	</script>
 </head>
@@ -127,10 +126,10 @@
 
 		</pre>
 		<p>Nun müsst ihr diese Binärzahl in eine Dezimalzahl umwandeln</p>
-		<div class="bsp" id="bsp1" onclick="ip4Show()">
+		<div class="bsp" onclick="umwandeln()">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse">10101000</p>
-			<div class="unsichtbar" id="ip4">
+			<div class="unsichtbar" id="umgewandelt">
 				<p>=</p>
 				<p class="adresse">168</p>
 			</div>
