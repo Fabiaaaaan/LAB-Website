@@ -6,15 +6,13 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function show(element) {
-			document.getElementById(element).style.display = "block";
-			if (element == "domain") {
-				document.getElementById("rot").style.color = "#FF6961";
-				document.getElementById("gelb").style.color = "#FDFD96";
-				document.getElementById("pink").style.color= "pink";
-			} else {
-				document.getElementById("pfeil" + (element - 1)).style.display = "none";
+	  var count = 1;
+		function show() {
+			document.getElementById(count.toString()).style.display = "block";
+			if (count == 4) {
+				document.getElementById("pfeil").style.display = "none";
 			}
+			count++;
 		}
 	</script>
 </head>
@@ -73,6 +71,7 @@
 			<li>Wenn du dein Konto löschst, verliert Instagram diese Rechte…</li>
 			<li>Aber, falls andere deine Bilder weitergeteilt haben, behält Instagram die Rechte an diesen Bildern</li>
 		</ul>
+		<hr>
 		<h3>Recht am eigenen Bild</h3>
 		<h4>Wenn ich auf der Straße rumlaufe:</h4>
 		<ul class="ur">
@@ -83,6 +82,7 @@
 		<ul class="ur">
 			<li>10 Jahre nach meinem Tod braucht der, der das Foto gemacht hat, die Zustimmung eines Angehörigen von mir, um es zu veröffentlichen</li>
 		</ul>
+		<hr>
 		<h3>Eiffelturm</h3>
 		<ul class="ur">
 			<li>1889 wird der Eiffelturm unter Leitung von Gustave Eiffel fertiggestellt</li>
@@ -94,25 +94,23 @@
 		</ul>
 		<hr>
 		<h2>Beispiel<h2>
-		<img style="width:200px;" src="eiffelturm.JPG">
+		<img style="width:200px;" src="eiffelturm.jpg">
 		<h4>Ich habe im Urlaub ein Foto vom Eiffelturm gemacht. Wer hat jetzt welche Rechte und darf ich das Bild veröffentlichen?</h4>
-		<ul class="ur">
-			<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
-			<div class="unsichtbar" id="2">
+		<ul class="ur" style="margin-bottom: 36px;">
+			<div class="unsichtbar" id="1">
 				<li>Ich habe das Urheberrecht, da ich der Urheber des Bildes bin</li>
-				<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
+			</div>
+			<div class="unsichtbar" id="2">
+				<li>Herr Eiffel ist schon länger als 70 Jahre tot, hat also kein Recht an seinem Werk mehr</li>
 			</div>
 			<div class="unsichtbar" id="3">
-				<li>Herr Eiffel ist schon länger als 70 Jahre tot, hat also kein Recht an seinem Werk mehr</li>
-				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
+				<li>Die Personen haben kein Recht am eigenen Bild, da sie als Beiwerk zufällig vor dem fotografierten Gebäude stehen</li>
 			</div>
 			<div class="unsichtbar" id="4">
-				<li>Die Personen haben kein Recht am eigenen Bild, da sie als Beiwerk zufällig vor dem fotografierten Gebäude stehen</li>
-				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="5">
 				<li>Ich darf das Bild also veröffentlichen und vorführen, wie ich lustig bin</li>
-		</ol>
+			</div>
+			<p id="pfeil" onclick="show()">-></p>
+		</ul>
 	</div>
 </body>
 </html>

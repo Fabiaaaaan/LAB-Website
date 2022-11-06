@@ -97,6 +97,7 @@ hr {
 
 p {
   font-family: tahoma;
+  font-size: 18px;
   margin-left: auto;
   margin-right: auto;
   max-width: 60%;
@@ -165,42 +166,36 @@ ul li {
   text-align: center;
 }
 
-.ur li, .ur ul {
-  font-family: tahoma;
-  font-size: 20px;
-  margin-top: 20px;
-  text-align: left;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
-}
-
-.binaer-tabelle th, .binaer-tabelle td{
   padding: 10px 20px;
 }
+
 /* Bit und Byte */
-.bit-tabelle th, .bit-tabelle td {
-  border: 1px solid black;
-  font-family: consolas;
+.bit-tabelle {
+  margin-top: 36px;
 }
 
-.bit-tabelle th, .bit-tabelle td{
+.bit-tabelle th, .bit-tabelle td {
+  border: 1px solid black;
+  font-family: tahoma;
   padding: 5px 5px;
 }
 
 .zwei-tabelle th, .zwei-tabelle td{
   border: 1px solid white;
-  font-family: consolas;
+  font-family: tahoma;
   padding: 1px 0px;
+}
+
+.bit-beispiel {
+  margin-top: 36px;
 }
 
 .bit-beispiel th, .bit-beispiel td {
   border: 1px solid black;
-  font-family: consolas;
+  font-family: tahoma;
   padding: 5px 5px;
 }
 
@@ -365,7 +360,7 @@ ol li {
   display: inline-block;
 }
 
-.pfeil {
+#pfeil {
   color: white;
   background-color: #0055bb;
   border-radius: 25px;
@@ -407,3 +402,12 @@ ol li {
 }
 
 /*Urheberschutz*/
+.ur li, .ur ul {
+  font-family: tahoma;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: left;
+  width: 60%;
+}

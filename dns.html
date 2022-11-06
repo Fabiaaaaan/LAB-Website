@@ -12,9 +12,16 @@
 				document.getElementById("rot").style.color = "#FF6961";
 				document.getElementById("gelb").style.color = "#FDFD96";
 				document.getElementById("pink").style.color= "pink";
-			} else {
-				document.getElementById("pfeil" + (element - 1)).style.display = "none";
 			}
+		}
+
+		var count = 1;
+		function dnsAnfrage() {
+			document.getElementById(count.toString()).style.display = "list-item";
+			if (count == 6) {
+				document.getElementById("pfeil").style.display = "none";
+			}
+			count++;
 		}
 	</script>
 </head>
@@ -25,7 +32,7 @@
 			<button class="dropbtn">IP-Adressen</button>
 			<div class="dropdown-content" style="max-width: 153px">
 				<a href="binaersystem.html">Binärsystem</a>
-				<a href="hex.html">Hexadezimalsystem</a>
+				<a href="hex.html">Hexadezimal- system</a>
 				<a href="bit.html">Bit und Byte</a>
 				<a href="ip-adressen.html">IP-Adressen</a>
 				<a href="ipv4vs6.html">IPv4 vs. IPv6</a>
@@ -77,30 +84,13 @@
 		<h2>Wie funktioniert eine DNS-Abfrage?</h2>
 		<ol>
 			<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
-			<p class="pfeil" onclick="show('2')" id="pfeil1"><b>-></b></p>
-			<div class="unsichtbar" id="2">
-				<li><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li><!-- Der Resolver ist ein Programm, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver. !-->
-				<p class="pfeil" onclick="show('3')" id="pfeil2"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="3">
-				<li><b>Der Rootserver an in welchem Top-Level-Domain sich die Website befindet.</b></li><!-- der Rootserver gibt es dem Resolver an. !-->
-				<p class="pfeil" onclick="show('4')" id="pfeil3"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="4">
-				<li><b>Der Resolver schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains.</b></li><!-- Er möchte die IP-Adresse des richtigen Namenservers ermitteln. !-->
-				<p class="pfeil" onclick="show('5')" id="pfeil4"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="5">
-				<li><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li><!-- der Namenserver sendet die IP-Adresse an den Resolver !-->
-				<p class="pfeil" onclick="show('6')" id="pfeil5"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="6">
-				<li><b>Der Resolver gibt die IP-Adresse an den Browser weiter.</b></li>
-				<p class="pfeil" onclick="show('7')" id="pfeil6"><b>-></b></p>
-			</div>
-			<div class="unsichtbar" id="7">
-				<li style="margin-bottom: 36px;"><b>Der Browser schickt eine Anfrage an die erhaltene IP-Adresse.</b></li>
-			</div>
+			<li class="unsichtbar" id="1"><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li><!-- Der Resolver ist ein Programm, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver. !-->
+			<li class="unsichtbar" id="2"><b>Der Rootserver an in welchem Top-Level-Domain sich die Website befindet.</b></li><!-- der Rootserver gibt es dem Resolver an. !-->
+			<li class="unsichtbar" id="3"><b>Der Resolver schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains.</b></li><!-- Er möchte die IP-Adresse des richtigen Namenservers ermitteln. !-->
+			<li class="unsichtbar" id="4"><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li><!-- der Namenserver sendet die IP-Adresse an den Resolver !-->
+			<li class="unsichtbar" id="5"><b>Der Resolver gibt die IP-Adresse an den Browser weiter.</b></li>
+			<li class="unsichtbar" id="6" style="margin-bottom: 36px;"><b>Der Browser schickt eine Anfrage an die erhaltene IP-Adresse.</b></li>
+			<p id="pfeil" onclick="dnsAnfrage()">-></p>
 		</ol>
 	</div>
 </body>
