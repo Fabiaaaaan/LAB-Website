@@ -300,7 +300,9 @@ td:hover .dropdown-content p {
 ol li {
   font-family: tahoma;
   font-size: 24px;
-  margin-bottom: 18px;
+  margin-left: 36px;
+  margin-right: 36px;
+  margin-top: 36px;
   text-align: center;
 }
 

@@ -24,15 +24,6 @@
 			}
 		}
 
-		function nullenWeg() {
-			document.getElementById("eineNull").innerHTML = "0";
-			document.getElementById("zusammenhängend").innerHTML = "";
-		}
-
-		function show(element) {
-			document.getElementById(element).style.display = "inline-block";
-		}
-
 		function ip6Show() {
 			document.getElementById("ip6").style.display = "block";
 			document.getElementById("präfix").style.color = "#FF6961";
@@ -65,12 +56,11 @@
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
 	<div class="text-box">
-		<h1>Aufbau</h1>
-		<p>Es gibt zwei verschiedene Versionen vom IP -> <b>IPv4- und IPv6-Adressen</b>.</p>
+		<h1>IPv4 vs. IPv6</h1>
+		<p>Da es zwei verschiedene Versionen des <a href="ip.html">Internet Protocols</a> (IP) gibt, gibt es zwei verschiedene Arten von IP-Adressen: <b>IPv4- und IPv6-Adressen</b>.</p>
 		<hr>
 		<h2>IPv4-Adressen</h2>
-		<p>IPv4-Adressen werden als vier Dezimalzahlen von 0 bis 255 dargestellt.</p><!--Punkte!-->
-		<p>Somit ist jede der vier Zahlen ein Byte groß.</p><!--In einem Byte kann jede Zahl von 0 bis 255 dargestellt werden. Die ganze IP-Adresse hat eine Größe von 4 Byte.!-->
+		<p>IPv4-Adressen bestehen aus 4 Zahlenblöcken, die einen Wertebereich von je einem Byte, also acht Bit, haben. Somit entspricht jeder Zahlenblock einer Zahl von 0 bis 255. Die Zahlenblöcke werden als Dezimalzahlen dargestellt und durch einen Punkt voneinander getrennt.</p>
 		<div class="bsp" id="bsp1" onclick="ip4Show()">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse">192.168.100.120</p>
@@ -80,11 +70,8 @@
 			</div>
 		</div>
 		<h2>Die Subnetzmaske</h2>
-		<p>Zu jeder IPv4-Adresse gehört eine <b>Subnetzmaske</b>.</p>
-		<p>Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
-		<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse.</p>
-		<p>Wandelt man sie in Binärzahlen um, besteht sie aus einer aufeinanderfolgenden Reihe von 1en und 0en.</p>
-		<P>An dem Punkt, wo die 0en auf 1en umspringen beginnt der Netzwerkteil der zugehörigen IP-Adresse.</p>
+		<p>Zu jeder IPv4-Adresse gehört eine <b>Subnetzmaske</b>. Sie gibt an welcher Teil der IP-Adresse das Netzwerk beschreibt und welcher Teil den Host.</p>
+		<p>Die Subnetzmaske gleicht in Aufbau und Darstellungsweise einer IP-Adresse. Werden jedoch alle vier Zahlenblöcke in das von Computern lesbare Binärsystem umgewandelt, besteht sie immer aus zwei aufeinanderfolgenden Folgen von 1en und 0en. An der Stelle, wo die binäre Subnetzmaske von 1en auf 0en umspringt, beginnt der Hostanteil der IP-Adresse.</p>
 		<div class="bsp" id="bsp2" onclick="smShow()">
 			<p class="mt0">Beispiel:</p>
 			<p><b>Subnetzmaske:</b></p>
@@ -98,18 +85,8 @@
 		</div>
 		<hr>
 		<h2>IPv6-Adressen</h2>
-		<p>IPv6-Adressen bestehen aus 8 Teilen, die eine Größe von 16 Bit haben. -> Insgesamt 128 Bit</p>
-		<p>Je 4 Bit werden als einstellige Hexadezimalzahl dargestellt. -> vierstellige Hexadezimalzahl</p><!--Mit 4 Bit kann jede einstellige Hexadezimal dargestellt werden<!-->
-		<p><b>Abkürzen</b></p>
-		<p>Zusammenhängende Blöcke, die ausschließlich aus 0en bestehen können einmal durch zwei Doppelpunkte bagekürzt werden.</p>
-		<p>Andere Blöcke, die aus 0en bestehen, können zu einer einzigen 0 abgekürzt werden.</p>
-		<div class="bsp"style="max-width: 800px" onclick="nullenWeg()">
-			<p class="mt0">Beispiel</p>
-			<p class="adresse">2a02:<span id="eineNull">0000</span>:973f:e78c:<span id="zusammenhängend">0000:0000:0000</span>:e061</p>
-		</div>
-		<h2>Der Präfix</h2>
-		<p>Auch eine IPv6-Adresse kann in einen Netzwerk = Präfix und einen Hostteil unterteilt werden.
-		<p>Statt der Subnetzmaske gibt es die Präfixlänge: Sie gibt an wie lange der Präfix ist.</p><!--Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.!-->
+		<p>IPv6-Adressen haben eine Länge von 128 Bit. Sie wird in acht Teile von je 16 Bit unterteilt. Innerhalb dieser Gruppierung werden je vier Bit als Hexadezimalzahl dargestellt, sodass eine vierstellige Hexadezimalzahl entsteht. Die acht vierstelligen Hexadezimalzahlen werden durch Doppelpunkte voneinander getrennt.</p>
+		<p>Eine Subnetzmaske wie bei IPv4-Adressen gibt es bei IPv6-Adressen nicht. Um trotzdem eine Unterteilung in Netzwerk- und Hostteil vornehmen zu können, wird der IPv6-Adresse eine Präfixlänge mit einem Schrägstrich ("/") angehängt. Die Präfixlänge gibt an, wie viele Bit der Präfix (der Netzwerkteil) lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
 		<div class="bsp" style="max-width: 800px" onclick="ip6Show()">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse"><span id="präfix">2a02:8108:973f:e78c</span>:<span id="ht6">7549:1759:ae97:e061</span>/64</p>
@@ -120,9 +97,8 @@
 		</div>
 		<hr>
 		<h2>Vor- und Nachteile</h2>
-		<p><b>Anzahl an Möglichen Adressen</b></p>
-		<p onclick="show('menge4')" style="font-size:32px">IPv4: <span class="unsichtbar" id="menge4">2<sup>32</sup></span></p><!-- = 4 Miliarden !-->
-		<p onclick="show('menge6')" style="font-size:32px">IPv6: <span class="unsichtbar" id="menge6">2<sup>128</sup></span></p><!-- = mehr als 340 Sextilionen. Für jeden Quadratmilimeter Erdoberfläche gibt es 600 Billiarden IPv6-Adressen. !-->
+		<p>Da IPv4-Adressen nur 4 Byte, also 32 Bit, lang können in einem Netzwerk theoretisch höchstens 256<sup>4</sup> bzw. <b>2<sup>32</sup></b> = 4.294.967.296 IP-Adressen vergeben werden, wobei es in der Praxis sogar noch weniger sind. Mit der wachsenden Digitalisierung reicht diese Anzahl an Adressen nicht mehr aus. IPv6 hingegen bietet die Möglichkeit für <b>2<sup>128</sup></b>, das sind mehr als 340 Sextilionen, verschiedene Adressen. Hier muss muss man sich keine Sorgen machen, dass einem die Adressen ausgehen.</p>
+		<p>Dennoch sind IPv4-Adressen immernoch wesentlich weiter verbreitet als ihr Nachfolgeversion. IPv4-Hosts und IPv6-Hosts können nicht direkt miteinander kommunizieren. Die Kommunikation dennoch zu ermöglichen ist sehr aufwendig.</p>
 	</div>
 </body>
 </html>
