@@ -101,6 +101,18 @@ p {
   max-width: 60%;
 }
 
+.bsp p {
+  text-align: center;
+}
+
+.center {
+  text-align: center
+}
+
+.allesmittig p {
+  text-align: center;
+}
+
 body {
   background-color: #ECECEC;
   margin: 0;
@@ -322,13 +334,16 @@ td:hover .dropdown-content p {
   width: 70%;
 }
 
+ol {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
 ol li {
   font-family: tahoma;
   font-size: 24px;
-  margin-left: 36px;
-  margin-right: 36px;
   margin-top: 36px;
-  text-align: center;
 }
 
 .thld {
@@ -358,6 +373,7 @@ ol li {
   max-width: 48px;
   padding-bottom: 12px;
   padding-top: 12px;
+  text-align: center;
 }
 
 /* MAC-Adressen */
