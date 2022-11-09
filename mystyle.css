@@ -129,6 +129,14 @@ a {
   color: #0055bb;
 }
 
+.links a {
+  color: #003399;
+  font-family: tahoma;
+  text-align: center;
+  width: 60%;
+  margin-left: 500px;
+}
+
 span {
   font-family: tahoma;
   text-align: center;
