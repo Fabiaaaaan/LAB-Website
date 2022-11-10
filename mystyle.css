@@ -95,7 +95,7 @@ hr {
   margin-top: 36px;
 }
 
-p {
+p, a {
   font-family: tahoma;
   font-size: 18px;
   margin-left: auto;
@@ -112,6 +112,11 @@ p {
 }
 
 .allesmittig p {
+  text-align: center;
+}
+
+.allesmittig a {
+  display: block;
   text-align: center;
 }
 
