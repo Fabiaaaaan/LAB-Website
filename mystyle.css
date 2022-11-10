@@ -95,7 +95,7 @@ hr {
   margin-top: 36px;
 }
 
-p, a {
+p, {
   font-family: tahoma;
   font-size: 18px;
   margin-left: auto;
@@ -132,14 +132,6 @@ div {
 
 a {
   color: #0055bb;
-}
-
-.links a {
-  color: #003399;
-  font-family: tahoma;
-  text-align: center;
-  width: 60%;
-  margin-left: 500px;
 }
 
 span {
