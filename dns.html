@@ -52,7 +52,7 @@
 	<div class="text-box">
 		<h1>Domain Name System</h1>
 		<p>Damit die Verbindung zu einem Server aufgebaut werden kann, wird die IP-Adresse des Servers benötigt.</p>
-		<p>Das <b>Domain Name System</b> übersetzt Domain-Namen in IP-Adressen.</p><!-- Durch das Domain Name System kann ein Nutzer eine Website öffnen ohne die IP-Adresse des entsprechenden Servers zu kennen. Ohne das DNS müsste man genau das. !-->
+		<p>Das <b>Domain Name System</b> übersetzt Domain-Namen in IP-Adressen. Nur deshalb ist es uns also möglich, Websites im Browser zu öffnen ohne die IP-Adresse des entsprechenden Servers auswendig zu wissen.</p>
 		<div class="bsp" onclick="show('hansenbergde')">
 				<p class="weiss mt0">Beispiel:</p>
 				<div class="searchbar"><span>www.hansenberg.de</span></div>
@@ -73,20 +73,18 @@
 				<p class="pink tld">Top-Level-Domain</p>
 			</div>
 		</div>
-		<p class="center">Ein Domainname besteht aus:</p>
-		<ul>
-			<li><b>Top-Level-Domain</b></li>
-			<li><b>Second-Level-Domain</b></li>
-			<li><b>Third-Level-Domain</b></li>
-		</ul>
+		<p>Ein Domainname besteht aus Top-Level-Domain, Second-Level-Domain und Third-Level-Domain.</p>
+		<p><b>Top-Level-Domain:</b><br>Die Top-Level-Domain steht am Ende des Domainnamen. Sie können in generische TLDs, wie .com oder .net, und länderspezifische TLDs, wie .de oder .at, eingeteilt werden.</p>
+		<p><b>Second-Level-Domain:</b><br>Die Second-Level-Domain steht vor der TLD. Sie ist innerhalb des Namensraums der TLD einmalig.</b>
+		<p><b>Third-Level-Domain:</b><br>Die Third-Level-Domain steht am Anfang des Domainnamens. Durch die Third-Level-Domain können verschiedene Bereiche einer Domain voneinander getrennt werden. Beispielsweise steht www für Webservices und mail für Mailserver.</p>
 		<hr>
 		<h2>Wie funktioniert eine DNS-Abfrage?</h2>
 		<ol>
 			<li><b>Der Nutzer gibt einen Domain-Namen in den Browser ein</b></li>
-			<li class="unsichtbar" id="1"><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b></li><!-- Der Resolver ist ein Programm, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver. !-->
-			<li class="unsichtbar" id="2"><b>Der Rootserver an in welchem Top-Level-Domain sich die Website befindet.</b></li><!-- der Rootserver gibt es dem Resolver an. !-->
-			<li class="unsichtbar" id="3"><b>Der Resolver schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains.</b></li><!-- Er möchte die IP-Adresse des richtigen Namenservers ermitteln. !-->
-			<li class="unsichtbar" id="4"><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver.</b></li><!-- der Namenserver sendet die IP-Adresse an den Resolver !-->
+			<li class="unsichtbar" id="1"><b>Der Resolver schickt eine Anfrage an den DNS-Rootserver.</b><br>Der Resolver ist ein Programm, das die Anfrage an das DNS übernimmt. Er fungiert somit als Schnittstelle zwischen Anwendung und Namensserver.</li>
+			<li class="unsichtbar" id="2"><b>Der Rootserver gibt dem Resolver an, in welchem Top-Level-Domain sich die Website befindet.</b></li>
+			<li class="unsichtbar" id="3"><b>Der Resolver schickt eine Anfrage an einen Server des entsprechenden Top-Level-Domains, um die IP-Adresse des richtigen Namenservers zu ermitteln.</b></li>
+			<li class="unsichtbar" id="4"><b>Der Resolver schickt eine Anfrage an den entsprechenden Namenserver, welcher die entsprechende IP-Adresse zurückgibt.</b></li>
 			<li class="unsichtbar" id="5"><b>Der Resolver gibt die IP-Adresse an den Browser weiter.</b></li>
 			<li class="unsichtbar" id="6" style="margin-bottom: 36px;"><b>Der Browser schickt eine Anfrage an die erhaltene IP-Adresse.</b></li>
 			<p id="pfeil" onclick="dnsAnfrage()">-></p>

@@ -353,8 +353,12 @@ ol {
 
 ol li {
   font-family: tahoma;
-  font-size: 24px;
+  font-size: 18px;
   margin-top: 36px;
+}
+
+ol li b {
+  font-size: 24px !important;
 }
 
 .thld {
