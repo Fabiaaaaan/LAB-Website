@@ -30,18 +30,27 @@
 			document.getElementById("abkuerzung").style.width = "600px";
 		}
 
-		function show(element) {
-			document.getElementById(element).style.display = "inline-block";
-		}
-
 		function ip6Show() {
 			document.getElementById("ip6").style.display = "block";
 			document.getElementById("präfix").style.color = "#FF6961";
 			document.getElementById("ht6").style.color = "#FDFD96";
 		}
 
+		function black() {
+			document.getElementById("text").style.color = "black"
+		}
+
 		function quiz() {
-			document.getElementById("quiz").style.display = "block";
+			input = document.getElementById("text").value;
+			if (input == "fe80:00") {
+				document.getElementById("text").style.color = "green";
+				document.getElementById("richtigeAntwort").style.display = "block";
+				document.getElementById("falscheAntwort").style.display = "none";
+			} else {
+				document.getElementById("text").style.color = "red";
+				document.getElementById("falscheAntwort").style.display = "block";
+				document.getElementById("richtigeAntwort").style.display = "none";
+			}
 		}
 	</script>
 </head>
@@ -66,7 +75,7 @@
 				<a href="mac.html">MAC-Adressen</a>
 			</div>
 		</div>
-		<a href="urheberschutz.html">Urheber- und Datenschutz</a>
+		<a href="urheberschutz.html">Urheberschutz</a>
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
 	<div class="text-box">
@@ -126,18 +135,21 @@
 		<hr>
 		<h2>Vor- und Nachteile</h2>
 		<p><b>Ein wesentlichen Verteil stellt die Anzahl der möglichen IPv6-Adressen dar.</b></p>
-		<p style="font-size:32px">IPv4: 2<sup>32</sup></p>
-		<p style="font-size:32px">IPv6: 2<sup>128</sup></p>
+		<p class="center" style="font-size:32px">IPv4: 2<sup>32</sup></p>
+		<p class="center" style="font-size:32px">IPv6: 2<sup>128</sup></p>
 		<p>Während die rund 3,4 Milliarden möglichen verschiedenen IPv4-Adressen nicht für alle internetfähigen Geräte auf der Welt ausreichen, muss man sich bei mehr als 340 Sextilionen verschiedenen IPv6-Adressen keine Sorgen machen.</p>
 		<p>Dennoch sind IPv4-Adressen immernoch wesentlich weiter verbreitet als IPv6-Adressen.</p>
 		<hr>
 		<h2>Quiz</h2>
-		<div class="bsp" onclick="quiz()" style="max-width: 800px;">
-			<p><b>Wie lautet der Präfix der folgenden IPv6-Adresse?</b></p>
+		<div class="bsp" style="max-width: 800px;">
+			<p style="margin-top: 0;"><b>Wie lautet der Präfix der folgenden IPv6-Adresse?</b></p>
 			<p class="adresse">fe80::7549:1759:ae97:e061/24<p>
-			<div class="unsichtbar" id="quiz">
-				<p class="adresse"><span class="rot">fe80:00</span>00:0000:0000:7549:1759:ae97:e061/24</p>
-			</div>
+			<form class="center">
+				<input id="text" onclick="black()" type="text">
+				<button onclick="quiz()" type="button">></button>
+				<p class="unsichtbar" id="falscheAntwort">falsch!</p>
+				<p class="unsichtbar" id="richtigeAntwort">richtig!</p>
+			</form>
 		</div>
 	</div>
 </body>

@@ -96,7 +96,7 @@ hr {
   margin-top: 36px;
 }
 
-p, a{
+p, a {
   font-family: tahoma;
   font-size: 18px;
   margin-left: auto;
@@ -287,6 +287,17 @@ ul li {
 .präfix {
   margin-left: 4%;
   margin-right: 72%;
+}
+
+input, button[type=button] {
+  font-family: tahoma;
+  font-size: 36px;
+  outline: none;
+  text-align: center;
+}
+
+#richtigeAntwort, #falscheAntwort {
+  margin-bottom: 0;
 }
 
 /* Internet Protocol */
