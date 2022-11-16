@@ -75,12 +75,12 @@
 		<a href="quellen.html" class="dropdown" style="float: right">Quellen</a>
 	</nav>
 	<div class="text-box">
-		<h1>Aufbau</h1>
+		<h1>Aufbau von IPv4- und IPv6-Adressen</h1>
 		<p>Da es zwei verschiedene Versionen des <a href="ip.html">Internet Protocols</a> (IP) gibt, gibt es zwei verschiedene Arten von IP-Adressen, die sich in ihrem Aufbau unterscheiden: <b>IPv4- und IPv6-Adressen</b>.</p>
 		<hr>
 		<h2>IPv4-Adressen</h2>
 		<p>IPv4-Adressen werden als vier Dezimalzahlen von 0 bis 255 dargestellt, die durch Punkte getrennt werden.</p>
-		<p>Jede Zahl von 0 bis 255 kann auch als achtstellige Binärzahl dargestellt werden. Die Zahlen werden also in 8 Bit (1 Byte) gespeichert. Die ganze IP-Adresse hat somit eine Größe von 4 Byte.</p>
+		<p>Jede Zahl von 0 bis 255 kann auch als achtstellige Binärzahl dargestellt werden. Die Zahlen werden also in 8 Bits (1 Byte) gespeichert. Die ganze IP-Adresse hat somit eine Größe von 4 Bytes.</p>
 		<div class="bsp" id="bsp1" onclick="ip4Show()">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse">192.168.100.120</p>
@@ -108,8 +108,7 @@
 		</div>
 		<hr>
 		<h2>IPv6-Adressen</h2>
-		<p>IPv6-Adressen bestehen aus 8 Teilen, die eine Größe von 16 Bit haben. -> Insgesamt 128 Bit</p>
-		<p>Je 4 Bit werden als einstellige Hexadezimalzahl dargestellt. -> vierstellige Hexadezimalzahl</p><!--Mit 4 Bit kann jede einstellige Hexadezimal dargestellt werden<!-->
+		<p>IPv6-Adressen bestehen aus 8 vierstelligen Hexadezimalzahlen. Alle 4-stelligen Hexadezimalzahlen können auch als 16-stellige Binärzahlen dargestellt werden. Also werden für jeden Zahlenblock 16 Bits bzw. 2 Bytes an Speicherplatz benötigt. Dementsprechend ist die gesamte IPv6-Adresse 128 Bits bzw. 16 Bytes groß.</p>
 		<p><b>Abkürzen</b></p>
 		<p>Zusammenhängende Blöcke, die ausschließlich aus 0en bestehen können einmal durch zwei Doppelpunkte abgekürzt werden.</p>
 		<p>Andere Blöcke, die aus 0en bestehen, können zu einer einzigen 0 zusammengefasst werden.</p>
@@ -119,7 +118,7 @@
 		</div>
 		<h2>Der Präfix</h2>
 		<p>Auch eine IPv6-Adresse kann in einen Netzwerk = Präfix und einen Hostteil unterteilt werden.
-		<p>Statt der Subnetzmaske gibt es die Präfixlänge: Sie gibt an wie viele Bit der Präfix lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
+		<p>Statt der Subnetzmaske gibt es die Präfixlänge: Sie gibt an wie viele Bits der Präfix lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bits für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
 		<div class="bsp" style="max-width: 800px" onclick="show('ip6', 'präfix', 'ht6')">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse"><span id="präfix">2a02:8108:973f:e78c</span>:<span id="ht6">7549:1759:ae97:e061</span>/64</p>
