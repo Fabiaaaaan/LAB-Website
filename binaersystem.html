@@ -6,8 +6,21 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="mystyle.css">
 	<script>
-		function umwandeln() {
-			document.getElementById("umgewandelt").style.display = "block";
+		function schwarz() {
+			document.getElementById("text").style.color = "black"
+		}
+	
+		function quiz() {
+			input = document.getElementById("text").value;
+			if (input == "168") {
+				document.getElementById("text").style.color = "green";
+				document.getElementById("richtigeAntwort").style.display = "block";
+				document.getElementById("falscheAntwort").style.display = "none";
+			} else {
+				document.getElementById("text").style.color = "red";
+				document.getElementById("falscheAntwort").style.display = "block";
+				document.getElementById("richtigeAntwort").style.display = "none";
+			}
 		}
 	</script>
 </head>
@@ -44,25 +57,12 @@
 		</div>
 		<hr>
 		<h2>Warum verwenden Computer das Binärsystem</h2>
-		<!--<ul class="bi">
-			<li>Zwei elektrische Zustände</li>
-			<li>Strom an: 1</li>
-			<li>Strom aus: 0</li>
-		</ul>-->
 		<p>Computer verwenden das Binärsystem, da im inneren des Computers mit zwei verschiedenen Zuständen gerbeitet wird. Strom aus steht hierbei für 0 und Strom an für 1.</p>
 		<hr>
 		<h2>Zählen</h2>
-		<p>Um das Binärsystem besser zu verstehen, schauen wir uns erstmal an, wie das Dezimalsystem funktioniert</p> -->
-	  <p>Das <b>Dezimalsystem</b> verwendet 10 Ziffern pro Stelle, 0-9. Beim Zählen wird erst die erste Stelle von rechts von 0-9 aufgefüllt. 0, 1, 2, 3 …. 9. Danach springt diese Stelle auf null, und die zweite Stelle wird auf 1 gesetzt: 8, 9, 10. Nun wird die erste Stelle von 0-9 wieder aufgefüllt 10, 11, 12 …. </p> -->
-		<!--<h3>Dezimalsystem</h3>
-		<ul class="ur">
-			<li>10 Ziffern pro Stelle</li>
-			<li>0-9</li>
-			<li>Erste Stelle wird 0-9 aufgefüllt: 0,1,2,3....9</li>
-			<li>Zweite Stelle springt auf 1: 8,9,<b>10</b></li>
-		</ul>-->
-		<pre>
-		</pre>
+		<p>Um das Binärsystem besser zu verstehen, schauen wir uns erstmal an, wie das Dezimalsystem funktioniert</p>
+	  <p>Das <b>Dezimalsystem</b> verwendet 10 Ziffern pro Stelle, 0-9. Beim Zählen wird erst die erste Stelle von rechts von 0-9 aufgefüllt. 0, 1, 2, 3 …. 9. Danach springt diese Stelle auf null, und die zweite Stelle wird auf 1 gesetzt: 8, 9, 10. Nun wird die erste Stelle von 0-9 wieder aufgefüllt 10, 11, 12 …. </p>
+		<br>
 		<div style="text-align: center;">
 			<table class="binaer-tabelle">
 			  <tr>
@@ -91,13 +91,8 @@
 			  </tr>
 		  </table>
 			</div>
-		<pre>
-		</pre>
+		<br>
 		<p>Das Zählen beim <b>Binärsystem</b> funktioniert ähnlich wie beim Dezimalsystem, nur dass nur zwei Ziffern verwendet werden: 0 und 1</p>
-		<!--<ul class="ur center">
-			<li class="center">2 Ziffern</li>
-			<li class="center">0 und 1</li>
-		</ul>-->
 		<pre>
 		</pre>
 		<div style="text-align: center;">
@@ -123,12 +118,6 @@
 		<hr>
 		<h2>Rechnen</h2>
 		<p>Um den Wert einer bestimmten <b>Dezimalzahl</b> zu berechnen und im Dezimalsystem anzugeben wird die erste Stelle von rechts mit 10<sup>0</sup> multipliziert, die zweite mit 10<sup>1</sup>, die dritte mit 10<sup>2</sup>… um den echten Wert zu erhalten.</p>
-		<!--<h3>Dezimalzahl</h3>
-		<ul class="ur">
-			<li>Basis 10</li>
-			<li>Erste Stelle von rechts mit 10<sup>0</sup> multipliziert</li>
-			<li>Zweite Stelle von rechts mit 10<sup>1</sup> multipliziert...</li>
-		</ul>-->
 		<div class="bsp">
 			<p class="mt0">Beispiel:</p>
 			<p><b>Dezimalzahl</b></p>
@@ -137,12 +126,6 @@
 			<p class="adresse"><span style="color: red">2*10<sup>3</sup></span>+<span style="color: yellow">8*10<sup>2</sup></span>+<span style="color: pink">9*10<sup>1</sup></span>+<span style="color: orange">4*10<sup>0</sup></span></p>
 		</div>
 		<p>Die Errechnung des Werts einer <b>Binärzahl</b> funktioniert ähnlich, nur verwenden wir hier die Basis 2. Die erste Stelle von rechts wird mit 2<sup>0</sup> multipliziert, die zweite Stelle mit 2<sup>1</sup>, die dritte Stelle mit 2<sup>2</sup>…</p>
-		<!--<h3>Binärzahl</h3>
-		<ul class="ur">
-			<li>Basis 2</li>
-			<li>Erste Stelle von rechts mit 2<sup>0</sup> multipliziert</li>
-			<li>Zweite Stelle von rechts mit 2<sup>1</sup> multipliziert...</li>
-		</ul>-->
 		<div class="bsp">
 			<p class="mt0">Beispiel:</p>
 			<p><b>Binärzahl</b></p>
@@ -151,19 +134,19 @@
 			<p class="adresse"><span style="color: red">1*2<sup>3</sup></span>+<span style="color: yellow">1*2<sup>2</sup></span>+<span style="color: pink">1*2<sup>1</sup></span>+<span style="color: orange">1*2<sup>0</sup></span>=15</p>
 		</div>
 		<p class="center">Hinweis: man kann in beiden Systemen unendlich viele Nullen links vor die Zahl schreiben:</p>
-		<p class="center">34=000000000000000034(Dezimalsystem)</p>
-		<p class="center">11011=0000000000000011011(Binärsystem)</p>
-		<pre>
-
-		</pre>
-		<p class="center">Nun müsst ihr diese Binärzahl in eine Dezimalzahl umwandeln:</p>
-		<div class="bsp" onclick="umwandeln()">
-			<p class="mt0">Beispiel:</p>
-			<p class="adresse">10101000</p>
-			<div class="unsichtbar" id="umgewandelt">
-				<p>=</p>
-				<p class="adresse">168</p>
-			</div>
+		<p class="center">34=000000000000000034 (Dezimalsystem)</p>
+		<p class="center">11011=0000000000000011011 (Binärsystem)</p>
+		<hr>
+		<h2>Quiz</h2>
+		<div class="bsp">
+			<p class="mt0"><b>Welcher Dezimalzahl entspricht diese Binärzahl?</b></p>
+			<p class="adresse">10101000<p>
+			<form class="center">
+				<input id="text" onclick="schwarz()" type="text">
+				<button onclick="quiz()" type="button">></button>
+				<p class="unsichtbar" id="falscheAntwort">falsch!</p>
+				<p class="unsichtbar" id="richtigeAntwort">richtig!</p>
+			</form>
 		</div>
 	</div>
 </body>

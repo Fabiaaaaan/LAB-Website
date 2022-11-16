@@ -58,7 +58,7 @@
 		<h2>IP-Pakete</h2>
 		<p>Das Internet Protocol definiert ein Struktur für Daten, die versandt werden sollen: <b>IP-Pakete</b>.</p>
 	  <p>IP-Pakete, auch IP-Datagrame genannt, werden hergestellt, indem den Datenpaketen vor Versand ein <b>IP-Header</b> hinzugefügt wird, der für das den erfolgreichen Versand relevante Informationen enthält.</p>
-		<p><b>Fragmentierung:</b> Jede Netzwerkschnittstelle hat eine Maximalgröße in Byte, die ein Paket, das diese passieren möchte, haben kann: die MTU (Maximum Transmission Unit). Auf seinem Weg, kann es passieren, dass ein IP-Paket zu groß ist und somit fragmentiert (zerteilt) werden muss. Die Fragmente werden separat weitergeschickt und am Ziel wieder zusammengesetzt.</p> <!-- Eigentlich werden die Datenpakete meist schon vom TCP aus eben diesem Grund zerlegt, aber werden andere Protokolle, wie das UDP oder das ICMP verwendet, werden größere Segmente versendet und das IP muss die Aufgabe der Segmentierung übernehmen.<!-->
+		<p><b>Fragmentierung:</b> Jede Netzwerkschnittstelle hat eine Maximalgröße in Byte, die ein Paket, das diese passieren möchte, haben kann: die MTU (Maximum Transmission Unit). Auf seinem Weg, kann es passieren, dass ein IP-Paket zu groß ist und somit fragmentiert (zerteilt) werden muss. Die Fragmente werden separat weitergeschickt und am Ziel wieder zusammengesetzt. Eigentlich werden die Datenpakete meist schon vom TCP aus eben diesem Grund zerlegt, aber werden andere Protokolle, wie das UDP oder das ICMP verwendet, werden größere Segmente versendet und das IP muss die Aufgabe der Segmentierung übernehmen.</p>
 		<p style="margin-top: 36px"><b>IPv4-Paket:</b></p>
 		<img alt="Paket" id="paket" onclick="inhaltShow()" src="paket.png">
 		<div style="text-align: center;">

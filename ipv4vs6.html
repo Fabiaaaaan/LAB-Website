@@ -17,11 +17,7 @@
 				document.getElementById("nm").innerHTML = "<span id='nt'>11111111.11111111.111111</span><span id='ht4'>00.00000000</span>";
 				document.getElementById("bsp2").style.maxWidth = "700px";
 				sm++;
-			} else {
-				document.getElementById("sm").style.display = "block";
-				document.getElementById("nt").style.color = "#FF6961";
-				document.getElementById("ht4").style.color = "#FDFD96";
-			}
+			} else show("sm", "nt", "ht4");
 		}
 
 		function nullenWeg() {
@@ -30,13 +26,13 @@
 			document.getElementById("abkuerzung").style.width = "600px";
 		}
 
-		function ip6Show() {
-			document.getElementById("ip6").style.display = "block";
-			document.getElementById("präfix").style.color = "#FF6961";
-			document.getElementById("ht6").style.color = "#FDFD96";
+		function show(block, rot, gelb) {
+			document.getElementById(block).style.display = "block";
+			document.getElementById(rot).style.color = "#FF6961";
+			document.getElementById(gelb).style.color = "#FDFD96";
 		}
 
-		function black() {
+		function schwarz() {
 			document.getElementById("text").style.color = "black"
 		}
 
@@ -124,7 +120,7 @@
 		<h2>Der Präfix</h2>
 		<p>Auch eine IPv6-Adresse kann in einen Netzwerk = Präfix und einen Hostteil unterteilt werden.
 		<p>Statt der Subnetzmaske gibt es die Präfixlänge: Sie gibt an wie viele Bit der Präfix lang ist. Meistens beträgt die Präfixlänge 64, sie kann aber auch andere Werte haben (z.B. 32, 48, 56), je nach dem wie viele Hosts Teil von dem Netzwerk sein sollen. Je kleiner der Präfix ist, desto mehr Hosts können Teil des Netzwerks sein, da mehr Bit für den Hostteil der IP-Adresse zur Verfügung stehen.</p>
-		<div class="bsp" style="max-width: 800px" onclick="ip6Show()">
+		<div class="bsp" style="max-width: 800px" onclick="show('ip6', 'präfix', 'ht6')">
 			<p class="mt0">Beispiel:</p>
 			<p class="adresse"><span id="präfix">2a02:8108:973f:e78c</span>:<span id="ht6">7549:1759:ae97:e061</span>/64</p>
 			<div class="unsichtbar" id="ip6">
@@ -142,10 +138,10 @@
 		<hr>
 		<h2>Quiz</h2>
 		<div class="bsp" style="max-width: 800px;">
-			<p style="margin-top: 0;"><b>Wie lautet der Präfix der folgenden IPv6-Adresse?</b></p>
+			<p class="mt0"><b>Wie lautet der Präfix der folgenden IPv6-Adresse?</b></p>
 			<p class="adresse">fe80::7549:1759:ae97:e061/24<p>
 			<form class="center">
-				<input id="text" onclick="black()" type="text">
+				<input id="text" onclick="schwarz()" type="text">
 				<button onclick="quiz()" type="button">></button>
 				<p class="unsichtbar" id="falscheAntwort">falsch!</p>
 				<p class="unsichtbar" id="richtigeAntwort">richtig!</p>
