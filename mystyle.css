@@ -172,6 +172,25 @@ ul li {
   text-align: center;
 }
 
+/* Index */
+.title {
+  font-size: 60px;
+  font-family: consolas;
+  color: white;
+}
+
+.titlelink {
+  color: white;
+  display: block;
+  font-size: 30px;
+  font-family: consolas;
+  text-align: center;
+}
+
+.titlelink:hover {
+  color: gray;
+}
+
 /* Binärsystem */
 .binaer-tabelle th, .binaer-tabelle td {
   border: 1px solid black;
@@ -401,25 +420,6 @@ ol li b {
 
 .gerätkennung {
   width: 40%;
-}
-
-/* Index */
-.title {
-  font-size: 60px;
-  font-family: consolas;
-  color: white;
-}
-
-.titlelink {
-  color: white;
-  display: block;
-  font-size: 30px;
-  font-family: consolas;
-  text-align: center;
-}
-
-.titlelink:hover {
-  color: gray;
 }
 
 /*Urheberschutz*/
