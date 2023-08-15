@@ -1,4 +1,4 @@
 import numpy as np
-vector = np.array([1,0,1])
-sum = vector + vector
+matrix = np.array([[1,0,1],[2,0,2],[3,0,3]])
+sum = matrix + matrix
 print(sum)
