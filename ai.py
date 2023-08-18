@@ -1,4 +1,5 @@
 import numpy as np
 import random as rn
-number = rn.random()
-print(number)
+pixels=28
+a1 = np.empty(pixels)
+print(a1)
